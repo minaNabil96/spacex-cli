@@ -1,0 +1,57 @@
+══════════════════════════════════════════════════════════════════════════════
+SpaceX CLI Verification Started
+══════════════════════════════════════════════════════════════════════════════
+Testing: spacex2 launches list --limit 2
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches list --upcoming
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches list --past
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches info abb6612f-3fc4-4e9c-9689-4642be1cc870
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches countdown
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 rockets list --limit 2
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 rockets info 196
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 capsules list --limit 2
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 capsules info 10
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 company info
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format json --dest verif.json --limit 5
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format csv --dest verif.csv --limit 5
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format markdown --dest verif.md --limit 5
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -o json launches list --limit 1
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -o json-pretty launches list --limit 1
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -o table launches list --limit 1
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -v launches list --limit 1
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+══════════════════════════════════════════════════════════════════════════════
+Exhaustive Verification Finished
+══════════════════════════════════════════════════════════════════════════════

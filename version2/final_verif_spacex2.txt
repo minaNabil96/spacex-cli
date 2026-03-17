@@ -1,0 +1,39 @@
+══════════════════════════════════════════════════════════════════════════════
+SpaceX CLI Verification Started
+══════════════════════════════════════════════════════════════════════════════
+Testing: spacex2 launches list --limit 2
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches list --upcoming
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 launches list --past
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 rockets list
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 capsules list
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 company info
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format json --dest verif.json
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format csv --dest verif.csv
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 export launches --format markdown --dest verif.md
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -o json launches list
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+Testing: spacex2 -o json-pretty launches list
+[0;31m✗ Failed[0m
+test_commands.sh: line 17: spacex2: command not found
+══════════════════════════════════════════════════════════════════════════════
+Verification Finished
+══════════════════════════════════════════════════════════════════════════════

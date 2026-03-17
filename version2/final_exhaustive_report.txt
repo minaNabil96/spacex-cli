@@ -1,0 +1,40 @@
+══════════════════════════════════════════════════════════════════════════════
+SpaceX CLI Verification Started
+══════════════════════════════════════════════════════════════════════════════
+Testing: ./.venv/Scripts/spacex2 launches list --limit 2
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 launches list --upcoming
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 launches list --past
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 launches info abb6612f-3fc4-4e9c-96ed-71c12f9e9086
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 launches countdown
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 rockets list --limit 2
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 rockets info 136
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 capsules list --limit 2
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 capsules info 10
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 company info
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 export launches --format json --dest verif.json --limit 5
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 export launches --format csv --dest verif.csv --limit 5
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 export launches --format markdown --dest verif.md --limit 5
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 -o json launches list --limit 1
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 -o json-pretty launches list --limit 1
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 -o table launches list --limit 1
+[0;32m✓ Success[0m
+Testing: ./.venv/Scripts/spacex2 -v launches list --limit 1
+[0;32m✓ Success[0m
+══════════════════════════════════════════════════════════════════════════════
+Exhaustive Verification Finished
+══════════════════════════════════════════════════════════════════════════════

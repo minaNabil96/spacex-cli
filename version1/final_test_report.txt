@@ -1,0 +1,488 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0 -- C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: e:\Python\CLI_Projects\Claude+Gemini_Flash\version1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, langsmith-0.4.34, cov-4.1.0, mock-3.15.1
+collecting ... collected 59 items
+
+tests/integration/test_capsules_cmd.py::test_list_capsules_table PASSED  [  1%]
+tests/integration/test_capsules_cmd.py::test_list_capsules_json PASSED   [  3%]
+tests/integration/test_capsules_cmd.py::test_capsule_info PASSED         [  5%]
+tests/integration/test_capsules_cmd.py::test_capsule_info_not_found PASSED [  6%]
+tests/integration/test_capsules_cmd.py::test_capsule_info_json PASSED    [  8%]
+tests/integration/test_company_cmd.py::test_company_info_table PASSED    [ 10%]
+tests/integration/test_company_cmd.py::test_company_info_json PASSED     [ 11%]
+tests/integration/test_company_cmd.py::test_company_info_json_pretty PASSED [ 13%]
+tests/integration/test_export_cmd.py::test_export_launches_json PASSED   [ 15%]
+tests/integration/test_export_cmd.py::test_export_launches_csv PASSED    [ 16%]
+tests/integration/test_export_cmd.py::test_export_launches_markdown PASSED [ 18%]
+tests/integration/test_export_cmd.py::test_export_launches_invalid_format PASSED [ 20%]
+tests/integration/test_launches_cmd.py::test_list_launches_table PASSED  [ 22%]
+tests/integration/test_launches_cmd.py::test_list_launches_json PASSED   [ 23%]
+tests/integration/test_launches_cmd.py::test_list_launches_json_pretty PASSED [ 25%]
+tests/integration/test_launches_cmd.py::test_list_launches_upcoming PASSED [ 27%]
+tests/integration/test_launches_cmd.py::test_list_launches_past PASSED   [ 28%]
+tests/integration/test_launches_cmd.py::test_launch_info PASSED          [ 30%]
+tests/integration/test_launches_cmd.py::test_launch_info_not_found PASSED [ 32%]
+tests/integration/test_launches_cmd.py::test_launch_info_json PASSED     [ 33%]
+tests/integration/test_rockets_cmd.py::test_list_rockets_table PASSED    [ 35%]
+tests/integration/test_rockets_cmd.py::test_list_rockets_json PASSED     [ 37%]
+tests/integration/test_rockets_cmd.py::test_rocket_info PASSED           [ 38%]
+tests/integration/test_rockets_cmd.py::test_rocket_info_not_found PASSED [ 40%]
+tests/integration/test_rockets_cmd.py::test_rocket_info_json PASSED      [ 42%]
+tests/unit/test_cli_commands.py::test_help_command <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 44%]
+tests/unit/test_cli_commands.py::test_launches_help <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 45%]
+tests/unit/test_cli_commands.py::test_rockets_help <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 47%]
+tests/unit/test_cli_commands.py::test_capsules_help <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 49%]
+tests/unit/test_cli_commands.py::test_company_help <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 50%]
+tests/unit/test_cli_commands.py::test_export_help <- ..\..\Gemini_3.1\version1\tests\unit\test_cli_commands.py PASSED [ 52%]
+tests/unit/test_formatters.py::TestJsonFormatter::test_compact_json PASSED [ 54%]
+tests/unit/test_formatters.py::TestJsonFormatter::test_pretty_json PASSED [ 55%]
+tests/unit/test_formatters.py::TestJsonFormatter::test_json_with_datetime PASSED [ 57%]
+tests/unit/test_formatters.py::TestJsonFormatter::test_json_list PASSED  [ 59%]
+tests/unit/test_formatters.py::TestCsvFormatter::test_csv_basic PASSED   [ 61%]
+tests/unit/test_formatters.py::TestCsvFormatter::test_csv_empty PASSED   [ 62%]
+tests/unit/test_formatters.py::TestTableFormatters::test_launches_table_columns PASSED [ 64%]
+tests/unit/test_formatters.py::TestTableFormatters::test_rockets_table_columns PASSED [ 66%]
+tests/unit/test_formatters.py::TestTableFormatters::test_capsules_table_columns PASSED [ 67%]
+tests/unit/test_formatters.py::TestPanelFormatters::test_launch_panel PASSED [ 69%]
+tests/unit/test_formatters.py::TestPanelFormatters::test_rocket_panel PASSED [ 71%]
+tests/unit/test_formatters.py::TestPanelFormatters::test_capsule_panel PASSED [ 72%]
+tests/unit/test_formatters.py::TestPanelFormatters::test_company_panel PASSED [ 74%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_basic_launch PASSED [ 76%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_links PASSED [ 77%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_missing_links PASSED [ 79%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details PASSED [ 81%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details_no_mission PASSED [ 83%]
+tests/unit/test_models.py::TestLaunchModel::test_create_launch PASSED    [ 84%]
+tests/unit/test_models.py::TestLaunchModel::test_launch_frozen PASSED    [ 86%]
+tests/unit/test_models.py::TestLaunchModel::test_launch_details_creation PASSED [ 88%]
+tests/unit/test_models.py::TestRocketModel::test_create_rocket PASSED    [ 89%]
+tests/unit/test_models.py::TestRocketModel::test_rocket_frozen PASSED    [ 91%]
+tests/unit/test_models.py::TestCapsuleModel::test_create_capsule PASSED  [ 93%]
+tests/unit/test_models.py::TestCompanyModel::test_create_company_info PASSED [ 94%]
+tests/unit/test_pagination.py::test_paginate_yields_all_items <- ..\..\Gemini_3.1\version1\tests\unit\test_pagination.py FAILED [ 96%]
+tests/unit/test_pagination.py::test_paginate_empty_response <- ..\..\Gemini_3.1\version1\tests\unit\test_pagination.py FAILED [ 98%]
+tests/unit/test_pagination.py::test_paginate_single_item <- ..\..\Gemini_3.1\version1\tests\unit\test_pagination.py FAILED [100%]
+
+================================== FAILURES ===================================
+_______________________ test_paginate_yields_all_items ________________________
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CDF99B0>
+endpoint = '/launches', params = {'limit': 100, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+>           response = self._session.get(url, params=params, timeout=self._timeout)
+
+src\spacex_cli\api\client.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:602: in get
+    return self.request("GET", url, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1204: in send
+    return self._on_request(adapter, request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <responses.RequestsMock object at 0x0000021A4C894050>
+adapter = <requests.adapters.HTTPAdapter object at 0x0000021A4CD01150>
+request = <PreparedRequest [GET]>, retries = None
+kwargs = {'cert': None, 'proxies': OrderedDict(), 'stream': False, 'timeout': 30, ...}
+request_url = 'https://lldev.thespacedevs.com/2.2.0/launches?limit=100&offset=0'
+match = None, match_failed_reasons = ['URL does not match']
+resp_callback = None
+error_msg = "Connection refused by Responses - the call doesn't match any registered mock.\n\nRequest: \n- GET https://lldev.thesp...0/launches?limit=100&offset=0\n\nAvailable matches:\n- GET https://api.spacexdata.com/v4/launches URL does not match\n"
+
+    def _on_request(
+        self,
+        adapter: "HTTPAdapter",
+        request: "PreparedRequest",
+        *,
+        retries: Optional["_Retry"] = None,
+        **kwargs: Any,
+    ) -> "models.Response":
+        # add attributes params and req_kwargs to 'request' object for further match comparison
+        # original request object does not have these attributes
+        request.params = self._parse_request_params(request.path_url)  # type: ignore[attr-defined]
+        request.req_kwargs = kwargs  # type: ignore[attr-defined]
+        request_url = str(request.url)
+        request.body = self._read_filelike_body(request.body)
+    
+        match, match_failed_reasons = self._find_match(request)
+        resp_callback = self.response_callback
+    
+        if match is None:
+            if any(
+                [
+                    p.match(request_url)
+                    if isinstance(p, Pattern)
+                    else request_url.startswith(p)
+                    for p in self.passthru_prefixes
+                ]
+            ):
+                logger.info("request.allowed-passthru", extra={"url": request_url})
+                return self._real_send(adapter, request, **kwargs)  # type: ignore
+    
+            error_msg = (
+                "Connection refused by Responses - the call doesn't "
+                "match any registered mock.\n\n"
+                "Request: \n"
+                f"- {request.method} {request_url}\n\n"
+                "Available matches:\n"
+            )
+            for i, m in enumerate(self.registered()):
+                error_msg += "- {} {} {}\n".format(
+                    m.method, m.url, match_failed_reasons[i]
+                )
+    
+            if self.passthru_prefixes:
+                error_msg += "Passthru prefixes:\n"
+                for p in self.passthru_prefixes:
+                    error_msg += f"- {p}\n"
+    
+            response = ConnectionError(error_msg)
+            response.request = request
+    
+            self._calls.add(request, response)
+>           raise response
+E           requests.exceptions.ConnectionError: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launches?limit=100&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/launches URL does not match
+
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1129: ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+launches_data = [{'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:...tellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}]
+
+>   ???
+
+E:\Python\CLI_Projects\Gemini_3.1\version1\tests\unit\test_pagination.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\spacex_cli\api\pagination.py:12: in paginate
+    for item in client.get_all(endpoint, params=params, limit=limit):
+src\spacex_cli\api\client.py:42: in get_all
+    response = self.get(endpoint, params=params).json()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CDF99B0>
+endpoint = '/launches', params = {'limit': 100, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            response = self._session.get(url, params=params, timeout=self._timeout)
+        except requests.exceptions.RequestException as exc:
+>           raise NetworkError(f"Network error: {exc}") from exc
+E           spacex_cli.utils.errors.NetworkError: Network error: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launches?limit=100&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/launches URL does not match
+
+src\spacex_cli\api\client.py:24: NetworkError
+________________________ test_paginate_empty_response _________________________
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CEBEFF0>
+endpoint = '/launches', params = {'limit': 10, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+>           response = self._session.get(url, params=params, timeout=self._timeout)
+
+src\spacex_cli\api\client.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:602: in get
+    return self.request("GET", url, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1204: in send
+    return self._on_request(adapter, request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <responses.RequestsMock object at 0x0000021A4C894050>
+adapter = <requests.adapters.HTTPAdapter object at 0x0000021A4CD6F1D0>
+request = <PreparedRequest [GET]>, retries = None
+kwargs = {'cert': None, 'proxies': OrderedDict(), 'stream': False, 'timeout': 30, ...}
+request_url = 'https://lldev.thespacedevs.com/2.2.0/launches?limit=10&offset=0'
+match = None, match_failed_reasons = ['URL does not match']
+resp_callback = None
+error_msg = "Connection refused by Responses - the call doesn't match any registered mock.\n\nRequest: \n- GET https://lldev.thesp....0/launches?limit=10&offset=0\n\nAvailable matches:\n- GET https://api.spacexdata.com/v4/launches URL does not match\n"
+
+    def _on_request(
+        self,
+        adapter: "HTTPAdapter",
+        request: "PreparedRequest",
+        *,
+        retries: Optional["_Retry"] = None,
+        **kwargs: Any,
+    ) -> "models.Response":
+        # add attributes params and req_kwargs to 'request' object for further match comparison
+        # original request object does not have these attributes
+        request.params = self._parse_request_params(request.path_url)  # type: ignore[attr-defined]
+        request.req_kwargs = kwargs  # type: ignore[attr-defined]
+        request_url = str(request.url)
+        request.body = self._read_filelike_body(request.body)
+    
+        match, match_failed_reasons = self._find_match(request)
+        resp_callback = self.response_callback
+    
+        if match is None:
+            if any(
+                [
+                    p.match(request_url)
+                    if isinstance(p, Pattern)
+                    else request_url.startswith(p)
+                    for p in self.passthru_prefixes
+                ]
+            ):
+                logger.info("request.allowed-passthru", extra={"url": request_url})
+                return self._real_send(adapter, request, **kwargs)  # type: ignore
+    
+            error_msg = (
+                "Connection refused by Responses - the call doesn't "
+                "match any registered mock.\n\n"
+                "Request: \n"
+                f"- {request.method} {request_url}\n\n"
+                "Available matches:\n"
+            )
+            for i, m in enumerate(self.registered()):
+                error_msg += "- {} {} {}\n".format(
+                    m.method, m.url, match_failed_reasons[i]
+                )
+    
+            if self.passthru_prefixes:
+                error_msg += "Passthru prefixes:\n"
+                for p in self.passthru_prefixes:
+                    error_msg += f"- {p}\n"
+    
+            response = ConnectionError(error_msg)
+            response.request = request
+    
+            self._calls.add(request, response)
+>           raise response
+E           requests.exceptions.ConnectionError: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launches?limit=10&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/launches URL does not match
+
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1129: ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+>   ???
+
+E:\Python\CLI_Projects\Gemini_3.1\version1\tests\unit\test_pagination.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\spacex_cli\api\pagination.py:12: in paginate
+    for item in client.get_all(endpoint, params=params, limit=limit):
+src\spacex_cli\api\client.py:42: in get_all
+    response = self.get(endpoint, params=params).json()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CEBEFF0>
+endpoint = '/launches', params = {'limit': 10, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            response = self._session.get(url, params=params, timeout=self._timeout)
+        except requests.exceptions.RequestException as exc:
+>           raise NetworkError(f"Network error: {exc}") from exc
+E           spacex_cli.utils.errors.NetworkError: Network error: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launches?limit=10&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/launches URL does not match
+
+src\spacex_cli\api\client.py:24: NetworkError
+__________________________ test_paginate_single_item __________________________
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CEBFCB0>
+endpoint = '/rockets', params = {'limit': 5, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+>           response = self._session.get(url, params=params, timeout=self._timeout)
+
+src\spacex_cli\api\client.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:602: in get
+    return self.request("GET", url, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1204: in send
+    return self._on_request(adapter, request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <responses.RequestsMock object at 0x0000021A4C894050>
+adapter = <requests.adapters.HTTPAdapter object at 0x0000021A4CF594D0>
+request = <PreparedRequest [GET]>, retries = None
+kwargs = {'cert': None, 'proxies': OrderedDict(), 'stream': False, 'timeout': 30, ...}
+request_url = 'https://lldev.thespacedevs.com/2.2.0/rockets?limit=5&offset=0'
+match = None, match_failed_reasons = ['URL does not match']
+resp_callback = None
+error_msg = "Connection refused by Responses - the call doesn't match any registered mock.\n\nRequest: \n- GET https://lldev.thesp...2.2.0/rockets?limit=5&offset=0\n\nAvailable matches:\n- GET https://api.spacexdata.com/v4/rockets URL does not match\n"
+
+    def _on_request(
+        self,
+        adapter: "HTTPAdapter",
+        request: "PreparedRequest",
+        *,
+        retries: Optional["_Retry"] = None,
+        **kwargs: Any,
+    ) -> "models.Response":
+        # add attributes params and req_kwargs to 'request' object for further match comparison
+        # original request object does not have these attributes
+        request.params = self._parse_request_params(request.path_url)  # type: ignore[attr-defined]
+        request.req_kwargs = kwargs  # type: ignore[attr-defined]
+        request_url = str(request.url)
+        request.body = self._read_filelike_body(request.body)
+    
+        match, match_failed_reasons = self._find_match(request)
+        resp_callback = self.response_callback
+    
+        if match is None:
+            if any(
+                [
+                    p.match(request_url)
+                    if isinstance(p, Pattern)
+                    else request_url.startswith(p)
+                    for p in self.passthru_prefixes
+                ]
+            ):
+                logger.info("request.allowed-passthru", extra={"url": request_url})
+                return self._real_send(adapter, request, **kwargs)  # type: ignore
+    
+            error_msg = (
+                "Connection refused by Responses - the call doesn't "
+                "match any registered mock.\n\n"
+                "Request: \n"
+                f"- {request.method} {request_url}\n\n"
+                "Available matches:\n"
+            )
+            for i, m in enumerate(self.registered()):
+                error_msg += "- {} {} {}\n".format(
+                    m.method, m.url, match_failed_reasons[i]
+                )
+    
+            if self.passthru_prefixes:
+                error_msg += "Passthru prefixes:\n"
+                for p in self.passthru_prefixes:
+                    error_msg += f"- {p}\n"
+    
+            response = ConnectionError(error_msg)
+            response.request = request
+    
+            self._calls.add(request, response)
+>           raise response
+E           requests.exceptions.ConnectionError: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/rockets?limit=5&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/rockets URL does not match
+
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1129: ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+>   ???
+
+E:\Python\CLI_Projects\Gemini_3.1\version1\tests\unit\test_pagination.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\spacex_cli\api\pagination.py:12: in paginate
+    for item in client.get_all(endpoint, params=params, limit=limit):
+src\spacex_cli\api\client.py:42: in get_all
+    response = self.get(endpoint, params=params).json()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x0000021A4CEBFCB0>
+endpoint = '/rockets', params = {'limit': 5, 'offset': 0}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            response = self._session.get(url, params=params, timeout=self._timeout)
+        except requests.exceptions.RequestException as exc:
+>           raise NetworkError(f"Network error: {exc}") from exc
+E           spacex_cli.utils.errors.NetworkError: Network error: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/rockets?limit=5&offset=0
+E           
+E           Available matches:
+E           - GET https://api.spacexdata.com/v4/rockets URL does not match
+
+src\spacex_cli\api\client.py:24: NetworkError
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src\spacex_cli\__init__.py                       1      0   100%
+src\spacex_cli\__main__.py                       3      3     0%   1-4
+src\spacex_cli\api\__init__.py                   0      0   100%
+src\spacex_cli\api\client.py                    51     14    73%   29-35, 45, 54-59
+src\spacex_cli\api\endpoints.py                 10      0   100%
+src\spacex_cli\api\pagination.py                 5      1    80%   13
+src\spacex_cli\cli\__init__.py                  25      0   100%
+src\spacex_cli\cli\capsules.py                  34      3    91%   25-27
+src\spacex_cli\cli\company.py                   22      3    86%   22-24
+src\spacex_cli\cli\export.py                    29      3    90%   26-28
+src\spacex_cli\cli\launches.py                  46     11    76%   30-32, 64-72
+src\spacex_cli\cli\rockets.py                   34      3    91%   25-27
+src\spacex_cli\config\__init__.py                0      0   100%
+src\spacex_cli\config\settings.py                7      0   100%
+src\spacex_cli\formatters\__init__.py            0      0   100%
+src\spacex_cli\formatters\csv_fmt.py            10      0   100%
+src\spacex_cli\formatters\json_fmt.py            6      0   100%
+src\spacex_cli\formatters\panel_fmt.py          25      0   100%
+src\spacex_cli\formatters\table_fmt.py          35      0   100%
+src\spacex_cli\models\__init__.py                0      0   100%
+src\spacex_cli\models\capsule.py                17      0   100%
+src\spacex_cli\models\company.py                22      0   100%
+src\spacex_cli\models\launch.py                 27      0   100%
+src\spacex_cli\models\rocket.py                 19      0   100%
+src\spacex_cli\services\__init__.py              0      0   100%
+src\spacex_cli\services\capsule_service.py      15      1    93%   23
+src\spacex_cli\services\company_service.py       8      0   100%
+src\spacex_cli\services\export_service.py       22      1    95%   16
+src\spacex_cli\services\launch_service.py       37      4    89%   39-42
+src\spacex_cli\services\rocket_service.py       11      0   100%
+src\spacex_cli\utils\__init__.py                 0      0   100%
+src\spacex_cli\utils\console.py                  3      0   100%
+src\spacex_cli\utils\countdown.py               17     11    35%   10-22
+src\spacex_cli\utils\errors.py                  12      2    83%   22-23
+src\spacex_cli\utils\logging.py                  4      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          557     60    89%
+
+Required test coverage of 60% reached. Total coverage: 89.23%
+=========================== short test summary info ===========================
+FAILED tests/unit/test_pagination.py::test_paginate_yields_all_items - spacex...
+FAILED tests/unit/test_pagination.py::test_paginate_empty_response - spacex_c...
+FAILED tests/unit/test_pagination.py::test_paginate_single_item - spacex_cli....
+======================== 3 failed, 56 passed in 0.70s =========================

@@ -1,0 +1,37 @@
+{
+  "count": 529,
+  "next": "https://ll.thespacedevs.com/2.2.0/config/launcher/?limit=1&manufacturer__id=121&offset=1",
+  "previous": null,
+  "results": [
+    {
+      "id": 136,
+      "url": "https://ll.thespacedevs.com/2.2.0/config/launcher/136/",
+      "name": "Angara 1.2",
+      "manufacturer": {
+        "id": 96,
+        "url": "https://ll.thespacedevs.com/2.2.0/agencies/96/",
+        "name": "Khrunichev State Research and Production Space Center",
+        "featured": true,
+        "type": "Government",
+        "country_code": "RUS",
+        "abbrev": "KhSC",
+        "description": "Khrunichev State Research and Production Space Center is a Moscow-based producer of spacecraft and space-launch systems, including the Proton and Rokot rockets and is currently developing the Angara rocket family. The Proton launch vehicle launches from Baikonur and Rokot launches from Baikonur and Plesetsk. Angara will launch from Plesetsk and Vostochny.",
+        "administrator": "Director: Andrey Vladimirovich Kalinovskiy",
+        "founding_year": "1916",
+        "launchers": "Proton | Rokot",
+        "spacecraft": "",
+        "parent": null,
+        "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_image_20190207032444.jpeg",
+        "logo_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/khrunichev2520state2520research2520and2520production2520space2520center_logo_20190207032444.png"
+      },
+      "program": [],
+      "family": "Angara",
+      "full_name": "Angara 1.2",
+      "variant": "1.2",
+      "reusable": false,
+      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/angara25201.2_image_20190224012254.jpeg",
+      "info_url": "http://www.ilslaunch.com/node/4680",
+      "wiki_url": "https://en.wikipedia.org/wiki/Angara_(rocket_family)#Angara_1.2"
+    }
+  ]
+}

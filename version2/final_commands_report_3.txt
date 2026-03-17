@@ -1,0 +1,83 @@
+══════════════════════════════════════════════════════════════════════════════
+SpaceX CLI Verification Started
+══════════════════════════════════════════════════════════════════════════════
+Testing: python -m spacex_cli spacex launches list --limit 2
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex launches list --upcoming
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex launches list --past
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex rockets list
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex capsules list
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex company info
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex export launches --format json --dest verif.json
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex export launches --format csv --dest verif.csv
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex export launches --format markdown --dest verif.md
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex -o json launches list
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+Testing: python -m spacex_cli spacex -o json-pretty launches list
+[0;31m✗ Failed[0m
+Usage: python -m spacex_cli [OPTIONS] COMMAND [ARGS]...
+Try 'python -m spacex_cli --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such command 'spacex'.                                                   |
++-----------------------------------------------------------------------------+
+══════════════════════════════════════════════════════════════════════════════
+Verification Finished
+══════════════════════════════════════════════════════════════════════════════

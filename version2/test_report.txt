@@ -1,0 +1,57 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0 -- E:\Python\CLI_Projects\Gemini_3.1_Pro\version1\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Python\CLI_Projects\Gemini_3.1_Pro\version1
+configfile: pyproject.toml
+plugins: cov-7.0.0
+collecting ... collected 2 items
+
+tests/unit/test_launch_service.py::test_get_launches PASSED              [ 50%]
+tests/unit/test_launch_service.py::test_get_launch_by_id PASSED          [100%]
+ERROR: Coverage failure: total of 22 is less than fail-under=60
+
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.13.7-final-0 _______________
+
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src\spacex_cli\__init__.py                       1      0   100%
+src\spacex_cli\__main__.py                       3      3     0%   1-4
+src\spacex_cli\api\__init__.py                   2      0   100%
+src\spacex_cli\api\client.py                    45     13    71%   23-24, 38-40, 47-54
+src\spacex_cli\api\endpoints.py                  7      0   100%
+src\spacex_cli\api\pagination.py                 6      6     0%   1-14
+src\spacex_cli\cli\__init__.py                  25     25     0%   1-50
+src\spacex_cli\cli\capsules.py                  33     33     0%   1-51
+src\spacex_cli\cli\company.py                   21     21     0%   1-28
+src\spacex_cli\cli\export.py                    28     28     0%   1-40
+src\spacex_cli\cli\launches.py                  45     45     0%   1-69
+src\spacex_cli\cli\rockets.py                   33     33     0%   1-51
+src\spacex_cli\config\__init__.py                0      0   100%
+src\spacex_cli\config\settings.py                7      0   100%
+src\spacex_cli\formatters\__init__.py            0      0   100%
+src\spacex_cli\formatters\csv_fmt.py            10     10     0%   1-13
+src\spacex_cli\formatters\json_fmt.py            6      6     0%   1-9
+src\spacex_cli\formatters\panel_fmt.py          19     19     0%   1-81
+src\spacex_cli\formatters\table_fmt.py          34     34     0%   1-55
+src\spacex_cli\models\__init__.py                0      0   100%
+src\spacex_cli\models\capsule.py                13     13     0%   1-15
+src\spacex_cli\models\company.py                17     17     0%   1-19
+src\spacex_cli\models\launch.py                 22      0   100%
+src\spacex_cli\models\rocket.py                 19     19     0%   1-21
+src\spacex_cli\services\__init__.py              0      0   100%
+src\spacex_cli\services\capsule_service.py      10     10     0%   1-16
+src\spacex_cli\services\company_service.py       6      6     0%   1-8
+src\spacex_cli\services\export_service.py       22     22     0%   1-28
+src\spacex_cli\services\launch_service.py       50     11    78%   19, 21, 34-37, 46-47, 55-56, 101
+src\spacex_cli\services\rocket_service.py       10     10     0%   1-20
+src\spacex_cli\utils\__init__.py                 0      0   100%
+src\spacex_cli\utils\console.py                  3      3     0%   1-4
+src\spacex_cli\utils\countdown.py               17     17     0%   1-22
+src\spacex_cli\utils\errors.py                  12      5    58%   13-15, 22-23
+src\spacex_cli\utils\logging.py                  4      4     0%   1-6
+--------------------------------------------------------------------------
+TOTAL                                          530    413    22%
+FAIL Required test coverage of 60% not reached. Total coverage: 22.08%
+============================== 2 passed in 0.31s ==============================

@@ -1,0 +1,65 @@
+name: CI — Space Launch Tracker CLI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-claude:
+    name: Test Claude Version (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    defaults:
+      run:
+        working-directory: version_claude
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: ruff check src/
+
+      - name: Run tests with coverage
+        run: pytest --cov=spacex_cli --cov-fail-under=60
+
+  test-gemini:
+    name: Test Gemini Version (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    # Note: hashFiles() is not supported in job-level 'if' expressions.
+    # Remove this condition if version_gemini always exists, or use a
+    # preliminary job to check for the file and set an output.
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    defaults:
+      run:
+        working-directory: version_gemini
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: ruff check src/
+
+      - name: Run tests with coverage
+        run: pytest --cov=spacex_cli --cov-fail-under=60

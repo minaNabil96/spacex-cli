@@ -1,0 +1,20 @@
+{
+  "id": 121,
+  "name": "Space Exploration Technologies Corp.",
+  "abbreviation": "SpaceX",
+  "type": "Private",
+  "country_code": "USA",
+  "description": "SpaceX was founded by Elon Musk in 2002 to reduce space transportation costs and enable the colonization of Mars.",
+  "administrator": "Elon Musk",
+  "founding_year": "2002",
+  "launchers": "Falcon 1, Falcon 9, Falcon Heavy, Starship",
+  "spacecraft": "Dragon 1, Dragon 2, Starship",
+  "total_launch_count": 300,
+  "successful_launches": 290,
+  "consecutive_successful_launches": 50,
+  "failed_launches": 10,
+  "pending_launches": 5,
+  "info_url": "https://www.spacex.com/",
+  "wiki_url": "https://en.wikipedia.org/wiki/SpaceX",
+  "logo_url": "https://example.com/logo.png"
+}

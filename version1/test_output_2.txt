@@ -1,0 +1,228 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0 -- C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: e:\Python\CLI_Projects\Claude+Gemini_Flash\version1
+configfile: pyproject.toml
+plugins: anyio-4.11.0, langsmith-0.4.34, cov-4.1.0, mock-3.15.1
+collecting ... collected 5 items
+
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_basic_launch FAILED [ 20%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_links FAILED [ 40%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_missing_links FAILED [ 60%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details FAILED [ 80%]
+tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details_no_mission FAILED [100%]
+
+================================== FAILURES ===================================
+___________________ TestParseLaunch.test_parse_basic_launch ___________________
+
+self = <test_launch_service.TestParseLaunch object at 0x000001665369A990>
+single_launch_data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def test_parse_basic_launch(self, single_launch_data):
+>       launch = _parse_launch(single_launch_data)
+
+tests\unit\test_launch_service.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def _parse_launch(data: dict) -> Launch:
+        return Launch(
+            id=data["id"],
+            name=data["name"],
+>           date_utc=datetime.fromisoformat(data["date_utc"].replace("Z", "+00:00")),
+            success=data.get("success"),
+            rocket=data.get("rocket", ""),
+            launchpad=data.get("launchpad", ""),
+            flight_number=data.get("flight_number", 0),
+            details=data.get("details"),
+            links_webcast=data.get("links", {}).get("webcast"),
+            links_article=data.get("links", {}).get("article"),
+        )
+E       KeyError: 'date_utc'
+
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:45: KeyError
+___________________ TestParseLaunch.test_parse_launch_links ___________________
+
+self = <test_launch_service.TestParseLaunch object at 0x000001665369AE90>
+single_launch_data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def test_parse_launch_links(self, single_launch_data):
+>       launch = _parse_launch(single_launch_data)
+
+tests\unit\test_launch_service.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def _parse_launch(data: dict) -> Launch:
+        return Launch(
+            id=data["id"],
+            name=data["name"],
+>           date_utc=datetime.fromisoformat(data["date_utc"].replace("Z", "+00:00")),
+            success=data.get("success"),
+            rocket=data.get("rocket", ""),
+            launchpad=data.get("launchpad", ""),
+            flight_number=data.get("flight_number", 0),
+            details=data.get("details"),
+            links_webcast=data.get("links", {}).get("webcast"),
+            links_article=data.get("links", {}).get("article"),
+        )
+E       KeyError: 'date_utc'
+
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:45: KeyError
+_______________ TestParseLaunch.test_parse_launch_missing_links _______________
+
+self = <test_launch_service.TestParseLaunch object at 0x0000016653667820>
+
+    def test_parse_launch_missing_links(self):
+        data = {
+            "id": "uuid-test",
+            "name": "Test",
+            "net": "2024-01-01T00:00:00.000Z",
+            "orbital_launch_attempt_count": 1,
+            "status": {"name": "Launch Successful", "abbrev": "Success"}
+        }
+>       launch = _parse_launch(data)
+
+tests\unit\test_launch_service.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+data = {'id': 'uuid-test', 'name': 'Test', 'net': '2024-01-01T00:00:00.000Z', 'orbital_launch_attempt_count': 1, ...}
+
+    def _parse_launch(data: dict) -> Launch:
+        return Launch(
+            id=data["id"],
+            name=data["name"],
+>           date_utc=datetime.fromisoformat(data["date_utc"].replace("Z", "+00:00")),
+            success=data.get("success"),
+            rocket=data.get("rocket", ""),
+            launchpad=data.get("launchpad", ""),
+            flight_number=data.get("flight_number", 0),
+            details=data.get("details"),
+            links_webcast=data.get("links", {}).get("webcast"),
+            links_article=data.get("links", {}).get("article"),
+        )
+E       KeyError: 'date_utc'
+
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:45: KeyError
+__________________ TestParseLaunch.test_parse_launch_details __________________
+
+self = <test_launch_service.TestParseLaunch object at 0x0000016653667A80>
+single_launch_data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def test_parse_launch_details(self, single_launch_data):
+>       details = _parse_launch_details(single_launch_data)
+
+tests\unit\test_launch_service.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:62: in _parse_launch_details
+    launch=_parse_launch(data),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+data = {'id': '5eb11b6b-199f-449e-9d29-6126600c0106', 'image': 'https://example.com/image.jpg', 'infoURLs': [{'url': 'https:/...stellation.', 'id': 1, 'name': 'Starlink-1', 'orbit': {'abbrev': 'LEO', 'id': 8, 'name': 'Low Earth Orbit'}, ...}, ...}
+
+    def _parse_launch(data: dict) -> Launch:
+        return Launch(
+            id=data["id"],
+            name=data["name"],
+>           date_utc=datetime.fromisoformat(data["date_utc"].replace("Z", "+00:00")),
+            success=data.get("success"),
+            rocket=data.get("rocket", ""),
+            launchpad=data.get("launchpad", ""),
+            flight_number=data.get("flight_number", 0),
+            details=data.get("details"),
+            links_webcast=data.get("links", {}).get("webcast"),
+            links_article=data.get("links", {}).get("article"),
+        )
+E       KeyError: 'date_utc'
+
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:45: KeyError
+____________ TestParseLaunch.test_parse_launch_details_no_mission _____________
+
+self = <test_launch_service.TestParseLaunch object at 0x00000166536CD490>
+
+    def test_parse_launch_details_no_mission(self):
+        data = {
+            "id": "test",
+            "name": "Test",
+            "net": "2024-01-01T00:00:00.000Z",
+            "orbital_launch_attempt_count": 1,
+            "status": {"name": "Launch Successful", "abbrev": "Success"}
+        }
+>       details = _parse_launch_details(data)
+
+tests\unit\test_launch_service.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:62: in _parse_launch_details
+    launch=_parse_launch(data),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+data = {'id': 'test', 'name': 'Test', 'net': '2024-01-01T00:00:00.000Z', 'orbital_launch_attempt_count': 1, ...}
+
+    def _parse_launch(data: dict) -> Launch:
+        return Launch(
+            id=data["id"],
+            name=data["name"],
+>           date_utc=datetime.fromisoformat(data["date_utc"].replace("Z", "+00:00")),
+            success=data.get("success"),
+            rocket=data.get("rocket", ""),
+            launchpad=data.get("launchpad", ""),
+            flight_number=data.get("flight_number", 0),
+            details=data.get("details"),
+            links_webcast=data.get("links", {}).get("webcast"),
+            links_article=data.get("links", {}).get("article"),
+        )
+E       KeyError: 'date_utc'
+
+..\..\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py:45: KeyError
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+Name                                                                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------------------------------------------------------
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\__init__.py                       1      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\__main__.py                       3      3     0%   1-4
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\api\__init__.py                   0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\api\client.py                    48     34    29%   12-17, 20-26, 29-35, 40-41, 45-55, 58, 61, 64
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\api\endpoints.py                 10      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\api\pagination.py                 5      5     0%   1-13
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\__init__.py                  25     25     0%   1-49
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\capsules.py                  34     34     0%   1-52
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\company.py                   22     22     0%   1-29
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\export.py                    29     29     0%   1-41
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\launches.py                  46     46     0%   1-72
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\cli\rockets.py                   34     34     0%   1-52
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\config\__init__.py                0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\config\settings.py                7      2    71%   8, 12
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\formatters\__init__.py            0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\formatters\csv_fmt.py            10     10     0%   1-13
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\formatters\json_fmt.py            6      6     0%   1-9
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\formatters\panel_fmt.py          19     19     0%   1-81
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\formatters\table_fmt.py          34     34     0%   1-55
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\models\__init__.py                0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\models\capsule.py                13     13     0%   1-15
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\models\company.py                17     17     0%   1-19
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\models\launch.py                 22      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\models\rocket.py                 19     19     0%   1-21
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\__init__.py              0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\capsule_service.py       9      9     0%   1-15
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\company_service.py       6      6     0%   1-8
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\export_service.py       22     22     0%   1-28
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\launch_service.py       29     14    52%   15-28, 32-33, 37-38
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\services\rocket_service.py        9      9     0%   1-15
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\utils\__init__.py                 0      0   100%
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\utils\console.py                  3      3     0%   1-4
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\utils\countdown.py               17     17     0%   1-22
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\utils\errors.py                  12      5    58%   13-15, 22-23
+E:\Python\CLI_Projects\Claude_opus_4.6\version1\src\spacex_cli\utils\logging.py                  4      4     0%   1-6
+--------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                          515    441    14%
+
+FAIL Required test coverage of 60% not reached. Total coverage: 14.37%
+=========================== short test summary info ===========================
+FAILED tests/unit/test_launch_service.py::TestParseLaunch::test_parse_basic_launch
+FAILED tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_links
+FAILED tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_missing_links
+FAILED tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details
+FAILED tests/unit/test_launch_service.py::TestParseLaunch::test_parse_launch_details_no_mission
+============================== 5 failed in 0.15s ==============================

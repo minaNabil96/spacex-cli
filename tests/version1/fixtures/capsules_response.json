@@ -1,0 +1,28 @@
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 3,
+      "name": "Dragon 1.0",
+      "type": {
+        "id": 1,
+        "name": "Capsule"
+      },
+      "agency": {
+        "id": 121,
+        "name": "SpaceX"
+      },
+      "in_use": false,
+      "capability": "ISS Resupply",
+      "maiden_flight": "2010-12-08",
+      "height": 6.1,
+      "diameter": 3.7,
+      "human_rated": false,
+      "crew_capacity": 0,
+      "image_url": "https://example.com/dragon1.jpg",
+      "wiki_url": "https://en.wikipedia.org/wiki/SpaceX_Dragon"
+    }
+  ]
+}

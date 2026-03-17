@@ -1,0 +1,65 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-9.0.2, pluggy-1.6.0 -- E:\Python\CLI_Projects\Gemini_3.1_Pro\version1\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Python\CLI_Projects\Gemini_3.1_Pro\version1
+configfile: pyproject.toml
+plugins: cov-7.0.0
+collecting ... collected 12 items
+
+tests/integration/test_launches_cmd.py::test_list_launches_json PASSED   [  8%]
+tests/integration/test_launches_cmd.py::test_launch_info_not_found PASSED [ 16%]
+tests/unit/test_cli_commands.py::test_launches_list_command PASSED       [ 25%]
+tests/unit/test_cli_commands.py::test_company_info_command PASSED        [ 33%]
+tests/unit/test_formatters.py::test_format_json PASSED                   [ 41%]
+tests/unit/test_formatters.py::test_format_launches_table PASSED         [ 50%]
+tests/unit/test_launch_service.py::test_get_launches PASSED              [ 58%]
+tests/unit/test_launch_service.py::test_get_launch_by_id PASSED          [ 66%]
+tests/unit/test_models.py::test_launch_creation PASSED                   [ 75%]
+tests/unit/test_models.py::test_launch_details_creation PASSED           [ 83%]
+tests/unit/test_models.py::test_frozen_behaviour PASSED                  [ 91%]
+tests/unit/test_pagination.py::test_paginate PASSED                      [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.13.7-final-0 _______________
+
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src\spacex_cli\__init__.py                       1      0   100%
+src\spacex_cli\__main__.py                       3      3     0%   1-4
+src\spacex_cli\api\__init__.py                   2      0   100%
+src\spacex_cli\api\client.py                    45     11    76%   23-24, 38-40, 49-54
+src\spacex_cli\api\endpoints.py                  7      0   100%
+src\spacex_cli\api\pagination.py                 6      0   100%
+src\spacex_cli\cli\__init__.py                  25      0   100%
+src\spacex_cli\cli\capsules.py                  34     19    44%   21-31, 41-52
+src\spacex_cli\cli\company.py                   22      5    77%   21-23, 28-29
+src\spacex_cli\cli\export.py                    29     19    34%   21-41
+src\spacex_cli\cli\launches.py                  46     14    70%   30-32, 53-56, 62-70
+src\spacex_cli\cli\rockets.py                   34     19    44%   21-31, 41-52
+src\spacex_cli\config\__init__.py                0      0   100%
+src\spacex_cli\config\settings.py                7      0   100%
+src\spacex_cli\formatters\__init__.py            0      0   100%
+src\spacex_cli\formatters\csv_fmt.py            10     10     0%   1-13
+src\spacex_cli\formatters\json_fmt.py            6      0   100%
+src\spacex_cli\formatters\panel_fmt.py          19      7    63%   11-29, 33-47, 51-60
+src\spacex_cli\formatters\table_fmt.py          34     18    47%   27-42, 46-55
+src\spacex_cli\models\__init__.py                0      0   100%
+src\spacex_cli\models\capsule.py                13      0   100%
+src\spacex_cli\models\company.py                17      0   100%
+src\spacex_cli\models\launch.py                 22      0   100%
+src\spacex_cli\models\rocket.py                 19      0   100%
+src\spacex_cli\services\__init__.py              0      0   100%
+src\spacex_cli\services\capsule_service.py      10      4    60%   7, 11-12, 16
+src\spacex_cli\services\company_service.py       6      0   100%
+src\spacex_cli\services\export_service.py       22     15    32%   8-11, 15-21, 25-28
+src\spacex_cli\services\launch_service.py       50     11    78%   19, 21, 34-37, 46-47, 55-56, 101
+src\spacex_cli\services\rocket_service.py       10      4    60%   10, 15-16, 20
+src\spacex_cli\utils\__init__.py                 0      0   100%
+src\spacex_cli\utils\console.py                  4      0   100%
+src\spacex_cli\utils\countdown.py               17     11    35%   10-22
+src\spacex_cli\utils\errors.py                  12      2    83%   22-23
+src\spacex_cli\utils\logging.py                  4      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          536    172    68%
+Required test coverage of 60% reached. Total coverage: 67.91%
+============================= 12 passed in 0.60s ==============================

@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "full_name": "Falcon 9",
+      "variant": "Block 5",
+      "description": "Two-stage rocket designed and manufactured by SpaceX."
+    },
+    {
+      "id": 2,
+      "full_name": "Falcon Heavy",
+      "variant": "v1.1",
+      "description": "Powerful heavy-lift launch vehicle."
+    }
+  ]
+}

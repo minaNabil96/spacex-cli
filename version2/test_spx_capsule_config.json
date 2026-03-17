@@ -1,0 +1,38 @@
+{
+  "count": 46,
+  "next": "https://ll.thespacedevs.com/2.2.0/config/spacecraft/?limit=1&manufacturer__id=121&offset=1",
+  "previous": null,
+  "results": [
+    {
+      "id": 10,
+      "url": "https://ll.thespacedevs.com/2.2.0/config/spacecraft/10/",
+      "name": "Apollo Command/Service Module",
+      "agency": {
+        "id": 999,
+        "url": "https://ll.thespacedevs.com/2.2.0/agencies/999/",
+        "name": "North American Aviation",
+        "featured": false,
+        "type": "Commercial",
+        "country_code": "USA",
+        "abbrev": "",
+        "description": "North American Aviation (NAA) was a major American aerospace manufacturer, responsible for a number of historic aircraft, including the T-6 Texan trainer, the P-51 Mustang fighter, the B-25 Mitchell bomber, the F-86 Sabre jet fighter, the X-15 rocket plane, and the XB-70, as well as Apollo command and service module, the second stage of the Saturn V rocket, the Space Shuttle orbiter and the B-1 Lancer.",
+        "administrator": null,
+        "founding_year": "1928",
+        "launchers": "North American X-15",
+        "spacecraft": "",
+        "parent": "Boeing",
+        "image_url": null,
+        "logo_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/north2520american2520aviation_logo_20200711032022.png"
+      },
+      "in_use": false,
+      "capability": "Cargo and Human Transportation to Lunar Orbit",
+      "maiden_flight": "1966-02-26",
+      "human_rated": true,
+      "crew_capacity": 3,
+      "image_url": "https://thespacedevs-prod.nyc3.digitaloceanspaces.com/media/images/apollo2520command2fservice2520module_image_20190207032507.jpeg",
+      "nation_url": null,
+      "wiki_link": "https://en.wikipedia.org/wiki/Apollo_Command/Service_Module",
+      "info_link": ""
+    }
+  ]
+}
