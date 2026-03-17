@@ -32,7 +32,7 @@ jobs:
         run: ruff check src/
 
       - name: Run tests with coverage
-        run: pytest --cov=spacex_cli --cov-fail-under=60
+        run: pytest ../tests/version1/ --cov=spacex_cli --cov-fail-under=60
 
   test-gemini:
     name: Test Gemini Version (Python ${{ matrix.python-version }})
@@ -62,4 +62,4 @@ jobs:
         run: ruff check src/
 
       - name: Run tests with coverage
-        run: pytest --cov=spacex_cli --cov-fail-under=60
+        run: pytest ../tests/version2/ --cov=spacex_cli --cov-fail-under=60
