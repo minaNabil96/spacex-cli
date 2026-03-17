@@ -29,7 +29,7 @@ line-length = 100
 target-version = "py311"
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["../tests/version1"]
 addopts = "--cov=spacex_cli --cov-report=term-missing --cov-fail-under=60"
 
 [build-system]

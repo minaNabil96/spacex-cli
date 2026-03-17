@@ -32,14 +32,13 @@ jobs:
         run: ruff check src/
 
       - name: Run tests with coverage
-        run: pytest ../tests/version1/ --cov=spacex_cli --cov-fail-under=60
+        run: |
+          python -c "import spacex_cli; print(f'Importing from: {spacex_cli.__file__}')"
+          pytest
 
   test-gemini:
     name: Test Gemini Version (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
-    # Note: hashFiles() is not supported in job-level 'if' expressions.
-    # Remove this condition if version_gemini always exists, or use a
-    # preliminary job to check for the file and set an output.
     strategy:
       matrix:
         python-version: ["3.11", "3.12"]
@@ -62,4 +61,6 @@ jobs:
         run: ruff check src/
 
       - name: Run tests with coverage
-        run: pytest ../tests/version2/ --cov=spacex_cli --cov-fail-under=60
+        run: |
+          python -c "import spacex_cli; print(f'Importing from: {spacex_cli.__file__}')"
+          pytest
