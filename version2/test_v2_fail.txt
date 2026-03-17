@@ -1,0 +1,346 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0 -- C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Python\CLI_Projects\Claude+Gemini_Flash
+plugins: anyio-4.11.0, langsmith-0.4.34, cov-4.1.0, mock-3.15.1
+collecting ... collected 12 items
+
+..\tests\version2\integration\test_launches_cmd.py::test_list_launches_json FAILED [  8%]
+..\tests\version2\integration\test_launches_cmd.py::test_launch_info_not_found PASSED [ 16%]
+..\tests\version2\unit\test_cli_commands.py::test_launches_list_command FAILED [ 25%]
+..\tests\version2\unit\test_cli_commands.py::test_company_info_command FAILED [ 33%]
+..\tests\version2\unit\test_formatters.py::test_format_json PASSED       [ 41%]
+..\tests\version2\unit\test_formatters.py::test_format_launches_table PASSED [ 50%]
+..\tests\version2\unit\test_launch_service.py::test_get_launches FAILED  [ 58%]
+..\tests\version2\unit\test_launch_service.py::test_get_launch_by_id FAILED [ 66%]
+..\tests\version2\unit\test_models.py::test_launch_creation PASSED       [ 75%]
+..\tests\version2\unit\test_models.py::test_launch_details_creation PASSED [ 83%]
+..\tests\version2\unit\test_models.py::test_frozen_behaviour PASSED      [ 91%]
+..\tests\version2\unit\test_pagination.py::test_paginate PASSED          [100%]
+
+================================== FAILURES ===================================
+___________________________ test_list_launches_json ___________________________
+
+launches_data = {'results': [{'id': '1', 'mission': {'description': "First operational crewed flight of SpaceX's Crew Dragon spacecraf...tion for global internet coverage.'}, 'name': 'Falcon 9 Block 5 | Starlink L-15', 'net': '2020-11-24T14:13:00Z', ...}]}
+
+    @responses.activate
+    def test_list_launches_json(launches_data):
+        responses.add(responses.GET, f"{BASE}/launch", json=launches_data)
+        result = runner.invoke(app, ["-o", "json", "launches", "list"])
+>       assert result.exit_code == 0
+E       assert 1 == 0
+E        +  where 1 = <Result SystemExit(1)>.exit_code
+
+..\tests\version2\integration\test_launches_cmd.py:13: AssertionError
+_________________________ test_launches_list_command __________________________
+
+launches_data = {'results': [{'id': '1', 'mission': {'description': "First operational crewed flight of SpaceX's Crew Dragon spacecraf...tion for global internet coverage.'}, 'name': 'Falcon 9 Block 5 | Starlink L-15', 'net': '2020-11-24T14:13:00Z', ...}]}
+
+    @responses.activate
+    def test_launches_list_command(launches_data):
+        responses.add(
+            responses.GET,
+            "https://lldev.thespacedevs.com/2.2.0/launch",
+            json=launches_data,
+            status=200
+        )
+    
+        result = runner.invoke(app, ["launches", "list"])
+>       assert result.exit_code == 0
+E       assert 1 == 0
+E        +  where 1 = <Result SystemExit(1)>.exit_code
+
+..\tests\version2\unit\test_cli_commands.py:18: AssertionError
+__________________________ test_company_info_command __________________________
+
+company_data = {'administrator': 'Elon Musk', 'description': 'Private American aerospace manufacturer.', 'founding_year': 2002, 'id': 121, ...}
+
+    @responses.activate
+    def test_company_info_command(company_data):
+        responses.add(
+            responses.GET,
+            "https://lldev.thespacedevs.com/2.2.0/agencies/121",
+            json=company_data,
+            status=200
+        )
+    
+        result = runner.invoke(app, ["company", "info"])
+>       assert result.exit_code == 0
+E       assert 1 == 0
+E        +  where 1 = <Result SystemExit(1)>.exit_code
+
+..\tests\version2\unit\test_cli_commands.py:33: AssertionError
+______________________________ test_get_launches ______________________________
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x000001ADBA3E35C0>
+endpoint = 'launch/', params = {'limit': 10, 'lsp__id': 121}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+>           response = self._session.get(url, params=params, timeout=self._timeout)
+
+src\spacex_cli\api\client.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:602: in get
+    return self.request("GET", url, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1204: in send
+    return self._on_request(adapter, request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <responses.RequestsMock object at 0x000001ADB911E510>
+adapter = <requests.adapters.HTTPAdapter object at 0x000001ADBA326C50>
+request = <PreparedRequest [GET]>, retries = None
+kwargs = {'cert': None, 'proxies': OrderedDict(), 'stream': False, 'timeout': 30, ...}
+request_url = 'https://lldev.thespacedevs.com/2.2.0/launch/?lsp__id=121&limit=10'
+match = None, match_failed_reasons = ['URL does not match']
+resp_callback = None
+error_msg = "Connection refused by Responses - the call doesn't match any registered mock.\n\nRequest: \n- GET https://lldev.thesp...ch/?lsp__id=121&limit=10\n\nAvailable matches:\n- GET https://lldev.thespacedevs.com/2.2.0/launch URL does not match\n"
+
+    def _on_request(
+        self,
+        adapter: "HTTPAdapter",
+        request: "PreparedRequest",
+        *,
+        retries: Optional["_Retry"] = None,
+        **kwargs: Any,
+    ) -> "models.Response":
+        # add attributes params and req_kwargs to 'request' object for further match comparison
+        # original request object does not have these attributes
+        request.params = self._parse_request_params(request.path_url)  # type: ignore[attr-defined]
+        request.req_kwargs = kwargs  # type: ignore[attr-defined]
+        request_url = str(request.url)
+        request.body = self._read_filelike_body(request.body)
+    
+        match, match_failed_reasons = self._find_match(request)
+        resp_callback = self.response_callback
+    
+        if match is None:
+            if any(
+                [
+                    p.match(request_url)
+                    if isinstance(p, Pattern)
+                    else request_url.startswith(p)
+                    for p in self.passthru_prefixes
+                ]
+            ):
+                logger.info("request.allowed-passthru", extra={"url": request_url})
+                return self._real_send(adapter, request, **kwargs)  # type: ignore
+    
+            error_msg = (
+                "Connection refused by Responses - the call doesn't "
+                "match any registered mock.\n\n"
+                "Request: \n"
+                f"- {request.method} {request_url}\n\n"
+                "Available matches:\n"
+            )
+            for i, m in enumerate(self.registered()):
+                error_msg += "- {} {} {}\n".format(
+                    m.method, m.url, match_failed_reasons[i]
+                )
+    
+            if self.passthru_prefixes:
+                error_msg += "Passthru prefixes:\n"
+                for p in self.passthru_prefixes:
+                    error_msg += f"- {p}\n"
+    
+            response = ConnectionError(error_msg)
+            response.request = request
+    
+            self._calls.add(request, response)
+>           raise response
+E           requests.exceptions.ConnectionError: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/?lsp__id=121&limit=10
+E           
+E           Available matches:
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch URL does not match
+
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1129: ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+launches_data = {'results': [{'id': '1', 'mission': {'description': "First operational crewed flight of SpaceX's Crew Dragon spacecraf...tion for global internet coverage.'}, 'name': 'Falcon 9 Block 5 | Starlink L-15', 'net': '2020-11-24T14:13:00Z', ...}]}
+
+    @responses.activate
+    def test_get_launches(launches_data):
+        responses.add(
+            responses.GET,
+            "https://lldev.thespacedevs.com/2.2.0/launch",
+            json=launches_data,
+            status=200
+        )
+    
+        with SpaceXClient() as client:
+>           launches = launch_service.get_launches(client)
+
+..\tests\version2\unit\test_launch_service.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\spacex_cli\services\launch_service.py:23: in get_launches
+    data = client.get_all(endpoint, params=params, limit=limit)
+src\spacex_cli\api\client.py:37: in get_all
+    response = self.get(endpoint, params=params).json()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x000001ADBA3E35C0>
+endpoint = 'launch/', params = {'limit': 10, 'lsp__id': 121}
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            response = self._session.get(url, params=params, timeout=self._timeout)
+        except requests.exceptions.RequestException as exc:
+>           raise NetworkError(f"Network error: {exc}") from exc
+E           spacex_cli.utils.errors.NetworkError: Network error: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/?lsp__id=121&limit=10
+E           
+E           Available matches:
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch URL does not match
+
+src\spacex_cli\api\client.py:24: NetworkError
+____________________________ test_get_launch_by_id ____________________________
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x000001ADBA3C0DD0>
+endpoint = 'launch/1/', params = None
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+>           response = self._session.get(url, params=params, timeout=self._timeout)
+
+src\spacex_cli\api\client.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:602: in get
+    return self.request("GET", url, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\requests\sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1204: in send
+    return self._on_request(adapter, request, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <responses.RequestsMock object at 0x000001ADB911E510>
+adapter = <requests.adapters.HTTPAdapter object at 0x000001ADBA353890>
+request = <PreparedRequest [GET]>, retries = None
+kwargs = {'cert': None, 'proxies': OrderedDict(), 'stream': False, 'timeout': 30, ...}
+request_url = 'https://lldev.thespacedevs.com/2.2.0/launch/1/', match = None
+match_failed_reasons = ['URL does not match'], resp_callback = None
+error_msg = "Connection refused by Responses - the call doesn't match any registered mock.\n\nRequest: \n- GET https://lldev.thesp...vs.com/2.2.0/launch/1/\n\nAvailable matches:\n- GET https://lldev.thespacedevs.com/2.2.0/launch/1 URL does not match\n"
+
+    def _on_request(
+        self,
+        adapter: "HTTPAdapter",
+        request: "PreparedRequest",
+        *,
+        retries: Optional["_Retry"] = None,
+        **kwargs: Any,
+    ) -> "models.Response":
+        # add attributes params and req_kwargs to 'request' object for further match comparison
+        # original request object does not have these attributes
+        request.params = self._parse_request_params(request.path_url)  # type: ignore[attr-defined]
+        request.req_kwargs = kwargs  # type: ignore[attr-defined]
+        request_url = str(request.url)
+        request.body = self._read_filelike_body(request.body)
+    
+        match, match_failed_reasons = self._find_match(request)
+        resp_callback = self.response_callback
+    
+        if match is None:
+            if any(
+                [
+                    p.match(request_url)
+                    if isinstance(p, Pattern)
+                    else request_url.startswith(p)
+                    for p in self.passthru_prefixes
+                ]
+            ):
+                logger.info("request.allowed-passthru", extra={"url": request_url})
+                return self._real_send(adapter, request, **kwargs)  # type: ignore
+    
+            error_msg = (
+                "Connection refused by Responses - the call doesn't "
+                "match any registered mock.\n\n"
+                "Request: \n"
+                f"- {request.method} {request_url}\n\n"
+                "Available matches:\n"
+            )
+            for i, m in enumerate(self.registered()):
+                error_msg += "- {} {} {}\n".format(
+                    m.method, m.url, match_failed_reasons[i]
+                )
+    
+            if self.passthru_prefixes:
+                error_msg += "Passthru prefixes:\n"
+                for p in self.passthru_prefixes:
+                    error_msg += f"- {p}\n"
+    
+            response = ConnectionError(error_msg)
+            response.request = request
+    
+            self._calls.add(request, response)
+>           raise response
+E           requests.exceptions.ConnectionError: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/1/
+E           
+E           Available matches:
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/1 URL does not match
+
+C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:1129: ConnectionError
+
+The above exception was the direct cause of the following exception:
+
+launches_data = {'results': [{'id': '1', 'mission': {'description': "First operational crewed flight of SpaceX's Crew Dragon spacecraf...tion for global internet coverage.'}, 'name': 'Falcon 9 Block 5 | Starlink L-15', 'net': '2020-11-24T14:13:00Z', ...}]}
+
+    @responses.activate
+    def test_get_launch_by_id(launches_data):
+        responses.add(
+            responses.GET,
+            "https://lldev.thespacedevs.com/2.2.0/launch/1",
+            json=launches_data["results"][0],
+            status=200
+        )
+    
+        with SpaceXClient() as client:
+>           details = launch_service.get_launch_by_id(client, "1")
+
+..\tests\version2\unit\test_launch_service.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\spacex_cli\services\launch_service.py:28: in get_launch_by_id
+    response = client.get(LAUNCH_DETAIL.format(id=launch_id)).json()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <spacex_cli.api.client.SpaceXClient object at 0x000001ADBA3C0DD0>
+endpoint = 'launch/1/', params = None
+
+    def get(self, endpoint: str, params: Optional[dict] = None) -> requests.Response:
+        url = f"{self._base_url}{endpoint}"
+        try:
+            response = self._session.get(url, params=params, timeout=self._timeout)
+        except requests.exceptions.RequestException as exc:
+>           raise NetworkError(f"Network error: {exc}") from exc
+E           spacex_cli.utils.errors.NetworkError: Network error: Connection refused by Responses - the call doesn't match any registered mock.
+E           
+E           Request: 
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/1/
+E           
+E           Available matches:
+E           - GET https://lldev.thespacedevs.com/2.2.0/launch/1 URL does not match
+
+src\spacex_cli\api\client.py:24: NetworkError
+=========================== short test summary info ===========================
+FAILED ..\tests\version2\integration\test_launches_cmd.py::test_list_launches_json
+FAILED ..\tests\version2\unit\test_cli_commands.py::test_launches_list_command
+FAILED ..\tests\version2\unit\test_cli_commands.py::test_company_info_command
+FAILED ..\tests\version2\unit\test_launch_service.py::test_get_launches - spa...
+FAILED ..\tests\version2\unit\test_launch_service.py::test_get_launch_by_id
+========================= 5 failed, 7 passed in 0.26s =========================

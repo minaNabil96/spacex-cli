@@ -7,9 +7,10 @@ from spacex_cli.services import launch_service
 def test_get_launches(launches_data):
     responses.add(
         responses.GET,
-        "https://lldev.thespacedevs.com/2.2.0/launch",
+        "https://lldev.thespacedevs.com/2.2.0/launch/",
         json=launches_data,
-        status=200
+        status=200,
+        match_querystring=False
     )
     
     with SpaceXClient() as client:
@@ -24,7 +25,7 @@ def test_get_launches(launches_data):
 def test_get_launch_by_id(launches_data):
     responses.add(
         responses.GET,
-        "https://lldev.thespacedevs.com/2.2.0/launch/1",
+        "https://lldev.thespacedevs.com/2.2.0/launch/1/",
         json=launches_data["results"][0],
         status=200
     )

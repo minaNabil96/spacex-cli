@@ -1,0 +1,405 @@
+{
+  "total_count": 4,
+  "jobs": [
+    {
+      "id": 67400805243,
+      "run_id": 23194984555,
+      "workflow_name": "CI — Space Launch Tracker CLI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/runs/23194984555",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORpZ6-c8AAAAPsWarew",
+      "head_sha": "442262ac0f20314eeaff04bea619019bec543636",
+      "url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/jobs/67400805243",
+      "html_url": "https://github.com/minaNabil96/spacex-cli/actions/runs/23194984555/job/67400805243",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-03-17T12:49:31Z",
+      "started_at": "2026-03-17T12:49:33Z",
+      "completed_at": "2026-03-17T12:49:48Z",
+      "name": "Test Claude Version (Python 3.11)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:36Z"
+        },
+        {
+          "name": "Set up Python 3.11",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-03-17T12:49:36Z",
+          "completed_at": "2026-03-17T12:49:36Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-03-17T12:49:36Z",
+          "completed_at": "2026-03-17T12:49:43Z"
+        },
+        {
+          "name": "Lint with ruff",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-03-17T12:49:43Z",
+          "completed_at": "2026-03-17T12:49:43Z"
+        },
+        {
+          "name": "Run tests with coverage",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-03-17T12:49:43Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        },
+        {
+          "name": "Post Set up Python 3.11",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-03-17T12:49:45Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-03-17T12:49:45Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-03-17T12:49:45Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/check-runs/67400805243",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000103,
+      "runner_name": "GitHub Actions 1000000103",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 67400805275,
+      "run_id": 23194984555,
+      "workflow_name": "CI — Space Launch Tracker CLI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/runs/23194984555",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORpZ6-c8AAAAPsWarmw",
+      "head_sha": "442262ac0f20314eeaff04bea619019bec543636",
+      "url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/jobs/67400805275",
+      "html_url": "https://github.com/minaNabil96/spacex-cli/actions/runs/23194984555/job/67400805275",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-03-17T12:49:31Z",
+      "started_at": "2026-03-17T12:49:33Z",
+      "completed_at": "2026-03-17T12:49:54Z",
+      "name": "Test Claude Version (Python 3.12)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:34Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Set up Python 3.12",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        },
+        {
+          "name": "Lint with ruff",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-03-17T12:49:47Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        },
+        {
+          "name": "Run tests with coverage",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-03-17T12:49:47Z",
+          "completed_at": "2026-03-17T12:49:51Z"
+        },
+        {
+          "name": "Post Set up Python 3.12",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-03-17T12:49:51Z",
+          "completed_at": "2026-03-17T12:49:52Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-03-17T12:49:52Z",
+          "completed_at": "2026-03-17T12:49:52Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-03-17T12:49:52Z",
+          "completed_at": "2026-03-17T12:49:52Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/check-runs/67400805275",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000101,
+      "runner_name": "GitHub Actions 1000000101",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 67400805286,
+      "run_id": 23194984555,
+      "workflow_name": "CI — Space Launch Tracker CLI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/runs/23194984555",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORpZ6-c8AAAAPsWarpg",
+      "head_sha": "442262ac0f20314eeaff04bea619019bec543636",
+      "url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/jobs/67400805286",
+      "html_url": "https://github.com/minaNabil96/spacex-cli/actions/runs/23194984555/job/67400805286",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-03-17T12:49:31Z",
+      "started_at": "2026-03-17T12:49:33Z",
+      "completed_at": "2026-03-17T12:49:48Z",
+      "name": "Test Gemini Version (Python 3.11)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-03-17T12:49:33Z",
+          "completed_at": "2026-03-17T12:49:34Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Set up Python 3.11",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:44Z"
+        },
+        {
+          "name": "Lint with ruff",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-03-17T12:49:44Z",
+          "completed_at": "2026-03-17T12:49:44Z"
+        },
+        {
+          "name": "Run tests with coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 6,
+          "started_at": "2026-03-17T12:49:44Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        },
+        {
+          "name": "Post Set up Python 3.11",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-03-17T12:49:47Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-03-17T12:49:47Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-03-17T12:49:47Z",
+          "completed_at": "2026-03-17T12:49:47Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/check-runs/67400805286",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000100,
+      "runner_name": "GitHub Actions 1000000100",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 67400805335,
+      "run_id": 23194984555,
+      "workflow_name": "CI — Space Launch Tracker CLI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/runs/23194984555",
+      "run_attempt": 1,
+      "node_id": "CR_kwDORpZ6-c8AAAAPsWar1w",
+      "head_sha": "442262ac0f20314eeaff04bea619019bec543636",
+      "url": "https://api.github.com/repos/minaNabil96/spacex-cli/actions/jobs/67400805335",
+      "html_url": "https://github.com/minaNabil96/spacex-cli/actions/runs/23194984555/job/67400805335",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-03-17T12:49:31Z",
+      "started_at": "2026-03-17T12:49:33Z",
+      "completed_at": "2026-03-17T12:49:50Z",
+      "name": "Test Gemini Version (Python 3.12)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:34Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-03-17T12:49:34Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Set up Python 3.12",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:35Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-03-17T12:49:35Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        },
+        {
+          "name": "Lint with ruff",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-03-17T12:49:45Z",
+          "completed_at": "2026-03-17T12:49:45Z"
+        },
+        {
+          "name": "Run tests with coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 6,
+          "started_at": "2026-03-17T12:49:45Z",
+          "completed_at": "2026-03-17T12:49:48Z"
+        },
+        {
+          "name": "Post Set up Python 3.12",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-03-17T12:49:48Z",
+          "completed_at": "2026-03-17T12:49:48Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-03-17T12:49:48Z",
+          "completed_at": "2026-03-17T12:49:49Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-03-17T12:49:49Z",
+          "completed_at": "2026-03-17T12:49:49Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/minaNabil96/spacex-cli/check-runs/67400805335",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000102,
+      "runner_name": "GitHub Actions 1000000102",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

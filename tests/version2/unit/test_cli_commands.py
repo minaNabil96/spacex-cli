@@ -9,9 +9,10 @@ runner = CliRunner()
 def test_launches_list_command(launches_data):
     responses.add(
         responses.GET,
-        "https://lldev.thespacedevs.com/2.2.0/launch",
+        "https://lldev.thespacedevs.com/2.2.0/launch/",
         json=launches_data,
-        status=200
+        status=200,
+        match_querystring=False
     )
     
     result = runner.invoke(app, ["launches", "list"])
@@ -24,7 +25,7 @@ def test_launches_list_command(launches_data):
 def test_company_info_command(company_data):
     responses.add(
         responses.GET,
-        "https://lldev.thespacedevs.com/2.2.0/agencies/121",
+        "https://lldev.thespacedevs.com/2.2.0/agencies/121/",
         json=company_data,
         status=200
     )
