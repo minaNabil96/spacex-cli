@@ -7,7 +7,7 @@ from spacex_cli.formatters.json_fmt import format_json
 from spacex_cli.formatters.panel_fmt import format_rocket_panel
 from spacex_cli.formatters.table_fmt import format_rockets_table
 from spacex_cli.services import rocket_service
-from spacex_cli.utils.console import console, out_console, error_console
+from spacex_cli.utils.console import console, out_console
 from spacex_cli.utils.errors import SpaceXCLIError
 
 app = typer.Typer(help="Rocket-related commands", no_args_is_help=True)

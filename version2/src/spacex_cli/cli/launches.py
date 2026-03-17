@@ -8,7 +8,7 @@ from spacex_cli.formatters.json_fmt import format_json
 from spacex_cli.formatters.panel_fmt import format_launch_panel
 from spacex_cli.formatters.table_fmt import format_launches_table
 from spacex_cli.services import launch_service
-from spacex_cli.utils.console import console, out_console, error_console
+from spacex_cli.utils.console import console, out_console
 from spacex_cli.utils.countdown import countdown_to_launch
 from spacex_cli.utils.errors import SpaceXCLIError
 

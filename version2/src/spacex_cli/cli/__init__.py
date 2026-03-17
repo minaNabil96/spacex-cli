@@ -1,6 +1,6 @@
 import typer
 from enum import Enum
-from typing import Optional
+
 
 from spacex_cli.utils.console import console
 from spacex_cli.utils.logging import setup_logging
@@ -41,7 +41,7 @@ def main(
 
 
 # Lazy import/add subtypers to avoid circular imports
-from spacex_cli.cli import launches, rockets, capsules, company, export
+from spacex_cli.cli import launches, rockets, capsules, company, export  # noqa: E402
 
 app.add_typer(launches.app, name="launches")
 app.add_typer(rockets.app, name="rockets")

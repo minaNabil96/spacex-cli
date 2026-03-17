@@ -5,7 +5,7 @@ from pathlib import Path
 import typer
 
 from spacex_cli.api.client import SpaceXClient
-from spacex_cli.services import export_service, launch_service, rocket_service
+from spacex_cli.services import export_service, launch_service
 from spacex_cli.utils.console import console
 from spacex_cli.utils.errors import SpaceXCLIError
 

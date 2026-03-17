@@ -1,0 +1,12 @@
+F401 `spacex_cli.utils.errors.SpaceXCLIError` imported but unused; consider removing, adding to `__all__`, or using a redundant alias
+ --> src\spacex_cli\cli\__init__.py:5:37
+  |
+3 | from spacex_cli.utils.console import console
+4 | from spacex_cli.utils.logging import setup_logging
+5 | from spacex_cli.utils.errors import SpaceXCLIError
+  |                                     ^^^^^^^^^^^^^^
+6 | from enum import Enum
+  |
+help: Use an explicit re-export: `SpaceXCLIError as SpaceXCLIError`
+
+Found 1 error.

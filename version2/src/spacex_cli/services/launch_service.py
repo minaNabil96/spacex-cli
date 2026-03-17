@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Optional
 
 from spacex_cli.api.client import SpaceXClient
 from spacex_cli.api.endpoints import LAUNCH_DETAIL, LAUNCHES, LAUNCH_UPCOMING, LAUNCH_PREVIOUS

@@ -1,5 +1,5 @@
 [project]
-name = "spacex-cli"
+name = "spacex-cli-gemini"
 version = "0.1.0"
 description = "SpaceX launch intelligence from your terminal"
 readme = "README.md"

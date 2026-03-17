@@ -1,0 +1,23 @@
+F401 `typing.Optional` imported but unused
+ --> src\spacex_cli\cli\__init__.py:3:20
+  |
+1 | import typer
+2 | from enum import Enum
+3 | from typing import Optional
+  |                    ^^^^^^^^
+4 |
+5 | from spacex_cli.utils.console import console
+  |
+help: Remove unused import: `typing.Optional`
+
+E402 Module level import not at top of file
+  --> src\spacex_cli\cli\__init__.py:44:1
+   |
+43 | # Lazy import/add subtypers to avoid circular imports
+44 | from spacex_cli.cli import launches, rockets, capsules, company, export
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+45 |
+46 | app.add_typer(launches.app, name="launches")
+   |
+
+Found 2 errors.

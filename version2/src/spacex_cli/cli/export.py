@@ -6,7 +6,6 @@ import typer
 from spacex_cli.api.client import SpaceXClient
 from spacex_cli.services import export_service, launch_service
 from spacex_cli.utils.console import console, error_console
-from spacex_cli.utils.errors import SpaceXCLIError
 
 app = typer.Typer(help="Export data to file", no_args_is_help=True)
 

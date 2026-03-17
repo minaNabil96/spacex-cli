@@ -2,7 +2,6 @@ import typer
 
 from spacex_cli.utils.console import console
 from spacex_cli.utils.logging import setup_logging
-from spacex_cli.utils.errors import SpaceXCLIError
 from enum import Enum
 
 app = typer.Typer(
