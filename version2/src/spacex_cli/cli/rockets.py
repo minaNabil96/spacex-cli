@@ -30,7 +30,7 @@ def list_rockets(
     else:
         import dataclasses
         data = [dataclasses.asdict(r) for r in rockets]
-        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)
 
 
 @app.command("info")
@@ -49,4 +49,4 @@ def rocket_info(
         console.print(format_rocket_panel(rocket))
     else:
         import dataclasses
-        out_console.print(format_json(dataclasses.asdict(rocket), pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(dataclasses.asdict(rocket), pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)

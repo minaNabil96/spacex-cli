@@ -12,7 +12,7 @@ def get_capsules(client: SpaceXClient, limit: int = 10) -> list[Capsule]:
 
 
 def get_capsule_by_id(client: SpaceXClient, capsule_id: str) -> Capsule:
-    endpoint = f"{CAPSULES}/{capsule_id}/"
+    endpoint = f"{CAPSULES}{capsule_id}/" # CAPSULES already ends with /
     return _parse_capsule(client.get(endpoint).json())
 
 

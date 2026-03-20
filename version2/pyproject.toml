@@ -30,6 +30,7 @@ target-version = "py311"
 
 [tool.pytest.ini_options]
 testpaths = ["../tests/version2"]
+pythonpath = ["src"]
 addopts = "--cov=spacex_cli --cov-report=term-missing --cov-fail-under=60"
 
 [build-system]

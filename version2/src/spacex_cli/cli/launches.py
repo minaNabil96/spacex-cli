@@ -35,7 +35,7 @@ def list_launches(
         console.print(format_launches_table(launches))
     else:
         data = [dataclasses.asdict(la) for la in launches]
-        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)
 
 
 @app.command("info")
@@ -53,7 +53,7 @@ def launch_info(
     if state.output == OutputFormat.TABLE:
         console.print(format_launch_panel(details))
     else:
-        out_console.print(format_json(dataclasses.asdict(details), pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(dataclasses.asdict(details), pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)
 
 
 @app.command("countdown")

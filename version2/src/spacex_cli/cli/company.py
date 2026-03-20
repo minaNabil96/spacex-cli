@@ -26,4 +26,4 @@ def company_info() -> None:
         console.print(format_company_panel(info))
     else:
         import dataclasses
-        out_console.print(format_json(dataclasses.asdict(info), pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(dataclasses.asdict(info), pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)

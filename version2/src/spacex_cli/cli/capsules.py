@@ -30,7 +30,7 @@ def list_capsules(
     else:
         import dataclasses
         data = [dataclasses.asdict(c) for c in capsules]
-        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(data, pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)
 
 
 @app.command("info")
@@ -49,4 +49,4 @@ def capsule_info(
         console.print(format_capsule_panel(capsule))
     else:
         import dataclasses
-        out_console.print(format_json(dataclasses.asdict(capsule), pretty=(state.output == OutputFormat.JSON_PRETTY)))
+        out_console.print(format_json(dataclasses.asdict(capsule), pretty=(state.output == OutputFormat.JSON_PRETTY)), soft_wrap=True)

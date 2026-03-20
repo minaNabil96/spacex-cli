@@ -13,7 +13,7 @@ def get_rockets(client: SpaceXClient, limit: int = 10) -> list[Rocket]:
 
 def get_rocket_by_id(client: SpaceXClient, rocket_id: str) -> Rocket:
     # Rocket ID in LL2 corresponds to config/launcher/{id}
-    endpoint = f"{ROCKETS}/{rocket_id}/"
+    endpoint = f"{ROCKETS}{rocket_id}/" # ROCKETS already ends with /
     return _parse_rocket(client.get(endpoint).json())
 
 

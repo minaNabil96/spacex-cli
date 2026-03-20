@@ -13,13 +13,13 @@ The project was developed following a strict implementation plan, focusing on st
 
 ## 4. Comparative Analysis
 
-| Criterion            | Gemini 3.1 Pro | Other AI |
-|----------------------|----------------|----------|
-| Context understanding| ★★★★★         | TBD      |
-| Code quality         | ★★★★★         | TBD      |
-| Dialogue support     | ★★★★★         | TBD      |
-| Error handling       | ★★★★★         | TBD      |
-| Documentation        | ★★★★★         | TBD      |
+| Criterion             | Gemini 3.0 Flash | Claude Opus 4.6 | Winner              |
+|-----------------------|------------------|-----------------|---------------------|
+| Context understanding | ★★★★★            | ★★★★★           | Tie                 |
+| Code quality          | ★★★★☆            | ★★★★★           | Claude              |
+| Test coverage         | ★★★★★ (81.58%)   | ★★★★★ (88.73%)  | Tie                 |
+| Error handling        | ★★★★★            | ★★★★☆           | Gemini              |
+| Documentation         | ★★★★☆            | ★★★★★           | Claude              |
 
 ## 5. Conclusions
-Gemini 3.1 Pro demonstratred superior ability to follow complex technical plans without stopping, providing a complete and production-ready implementation.
+Gemini 3.0 Flash demonstrated superior ability to follow complex technical plans without stopping, providing a complete implementation with 81.58% test coverage (22 tests). While Claude produced more tests (59) and slightly higher coverage (88.73%), both versions exceeded the university requirement of 60%.
