@@ -1,0 +1,65 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0
+rootdir: E:\Python\CLI_Projects\Claude+Gemini_Flash\version1
+configfile: pyproject.toml
+testpaths: ../tests/version1
+plugins: anyio-4.11.0, langsmith-0.4.34, cov-4.1.0, mock-3.15.1
+collected 59 items
+
+integration\test_capsules_cmd.py .....                                   [  8%]
+integration\test_company_cmd.py ...                                      [ 13%]
+integration\test_export_cmd.py ....                                      [ 20%]
+integration\test_launches_cmd.py ........                                [ 33%]
+integration\test_rockets_cmd.py .....                                    [ 42%]
+unit\test_cli_commands.py ......                                         [ 52%]
+unit\test_formatters.py .............                                    [ 74%]
+unit\test_launch_service.py .....                                        [ 83%]
+unit\test_models.py .......                                              [ 94%]
+unit\test_pagination.py ...                                              [100%]C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\coverage\inorout.py:577: CoverageWarning: Module spacex_cli was previously imported, but not measured (module-not-measured); see https://coverage.readthedocs.io/en/7.13.4/messages.html#warning-module-not-measured
+  self.warn(msg, slug="module-not-measured")
+
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src\spacex_cli\__init__.py                       1      0   100%
+src\spacex_cli\__main__.py                       3      3     0%   1-4
+src\spacex_cli\api\__init__.py                   0      0   100%
+src\spacex_cli\api\client.py                    51     16    69%   23-24, 29-35, 45, 54-59
+src\spacex_cli\api\endpoints.py                 10      0   100%
+src\spacex_cli\api\pagination.py                 5      0   100%
+src\spacex_cli\cli\__init__.py                  28      2    93%   54-55
+src\spacex_cli\cli\capsules.py                  34      3    91%   25-27
+src\spacex_cli\cli\company.py                   22      3    86%   22-24
+src\spacex_cli\cli\export.py                    29      3    90%   26-28
+src\spacex_cli\cli\launches.py                  46     11    76%   30-32, 64-72
+src\spacex_cli\cli\rockets.py                   34      3    91%   25-27
+src\spacex_cli\config\__init__.py                0      0   100%
+src\spacex_cli\config\settings.py                7      0   100%
+src\spacex_cli\formatters\__init__.py            0      0   100%
+src\spacex_cli\formatters\csv_fmt.py            10      0   100%
+src\spacex_cli\formatters\json_fmt.py            6      0   100%
+src\spacex_cli\formatters\panel_fmt.py          25      0   100%
+src\spacex_cli\formatters\table_fmt.py          35      0   100%
+src\spacex_cli\models\__init__.py                0      0   100%
+src\spacex_cli\models\capsule.py                17      0   100%
+src\spacex_cli\models\company.py                22      0   100%
+src\spacex_cli\models\launch.py                 27      0   100%
+src\spacex_cli\models\rocket.py                 19      0   100%
+src\spacex_cli\services\__init__.py              0      0   100%
+src\spacex_cli\services\capsule_service.py      15      1    93%   23
+src\spacex_cli\services\company_service.py       8      0   100%
+src\spacex_cli\services\export_service.py       22      1    95%   16
+src\spacex_cli\services\launch_service.py       36      4    89%   38-41
+src\spacex_cli\services\rocket_service.py       11      0   100%
+src\spacex_cli\utils\__init__.py                 0      0   100%
+src\spacex_cli\utils\console.py                  3      0   100%
+src\spacex_cli\utils\countdown.py               17     11    35%   10-22
+src\spacex_cli\utils\errors.py                  12      2    83%   22-23
+src\spacex_cli\utils\logging.py                  4      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          559     63    89%
+
+Required test coverage of 60% reached. Total coverage: 88.73%
+
+============================= 59 passed in 0.51s ==============================

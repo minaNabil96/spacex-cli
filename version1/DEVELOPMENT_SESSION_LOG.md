@@ -98,8 +98,8 @@
 - **Total files created:** ~50
 - **Total lines of code (approximate):** 1,700
 - **Number of CLI commands implemented:** 9 (launches list/info/countdown, rockets list/info, capsules list/info, company info, export launches)
-- **Number of test functions written:** 63
-- **Test coverage (verified):** 90.02% (63/63 tests passing)
+- **Number of test functions written:** 59
+- **Test coverage (verified):** 88.73% (59/59 tests passing)
 - **Dependencies used:** typer[all], requests, rich, python-dotenv, pytest, pytest-cov, responses, ruff
 - **Python 3.11+ features used:**
   - `match` statements (in `client.py` and `export.py`)
@@ -113,11 +113,11 @@
 
 | Criterion                  | Rating  | Comment                                                    |
 |----------------------------|---------|------------------------------------------------------------||
-| Code correctness           | ★★★★☆  | Fixed vars()/slots bug; all 63 tests pass at 90% coverage  |
+| Code correctness           | ★★★★☆  | Fixed vars()/slots bug; all 59 tests pass at 88% coverage  |
 | PEP 8 compliance           | ★★★★★  | Consistent formatting, 100-char line limit, clean imports  |
 | Type annotation coverage   | ★★★★★  | Every function has return type and parameter annotations    |
 | Error handling quality     | ★★★★☆  | Custom exception hierarchy with proper exit codes; all commands have try/except |
-| Test quality               | ★★★★★  | 63 tests covering models, parsing, formatters, CLI help, integration flows; 90% coverage |
+| Test quality               | ★★★★★  | 59 tests covering models, parsing, formatters, CLI help, integration flows; 88% coverage |
 | Documentation quality      | ★★★★☆  | README with all commands, API reference, comparison template, CI config |
 | Rich UI quality            | ★★★★☆  | Tables with emoji icons, styled panels with Markdown, live countdown |
 | Overall                    | ★★★★☆  | Complete, well-structured implementation; caught and fixed the slots/vars() bug |

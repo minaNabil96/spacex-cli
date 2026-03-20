@@ -16,7 +16,7 @@ The tool tracks space launches from **all providers** (SpaceX, NASA, Roscosmos, 
 - Multiple output formats (table, JSON, JSON-pretty)
 - Export to JSON, CSV, and Markdown
 - Comprehensive error handling with proper exit codes
-- 90%+ test coverage
+- 88%+ test coverage
 
 ## REST API Used
 
@@ -284,7 +284,7 @@ version1/
 - Множественные форматы вывода (table, JSON, JSON-pretty)
 - Экспорт в JSON, CSV и Markdown
 - Комплексная обработка ошибок с корректными кодами выхода
-- Покрытие тестами 90%+
+- Покрытие тестами 88%+
 
 ## Используемый REST API
 

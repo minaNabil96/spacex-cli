@@ -17,7 +17,7 @@ def _parse_rocket(data: dict) -> Rocket:
     config = data  # In ROCKETS list, each item is a launcher_config
     return Rocket(
         id=config["id"],
-        name=config["name"],
+        name=config.get("name", config.get("full_name", "Unknown")),
         full_name=config.get("full_name", config["name"]),
         variant=config.get("variant", "N/A"),
         family=config.get("family", "N/A"),

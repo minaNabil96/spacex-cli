@@ -24,4 +24,5 @@ def test_launch_info_not_found():
     responses.add(responses.GET, f"{BASE}/launch/bad-id/", status=404)
     result = runner.invoke(app, ["launches", "info", "bad-id"])
     assert result.exit_code == 1
-    assert "Error:" in result.stdout
+    # Check both stdout and stderr (merged in result.output)
+    assert "Error:" in result.output

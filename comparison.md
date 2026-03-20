@@ -44,7 +44,7 @@ Both versions filter for SpaceX using the `lsp__id=121` query parameter on launc
 
 I provided Claude with the full `implementation_plan.md` and a set of strict rules: no placeholders, no stopping to ask questions, write every file completely. Claude read the plan and immediately began creating files phase by phase. The process was systematic — Phase 1 (project setup), Phase 2 (API layer), Phase 3 (models), through to Phase 8 (documentation).
 
-Claude completed all 8 phases across approximately 4 user interactions (mostly "Continue" prompts). The most notable issue was a `vars()` bug — Claude used `vars()` to serialize slotted dataclasses, which lacks `__dict__`. This caused 13 integration tests to fail. After I provided the test output, Claude correctly identified the root cause and replaced all `vars()` calls with `dataclasses.asdict()` across 5 files. After the fix, all 63 tests passed with **90.02% coverage**.
+Claude completed all 8 phases across approximately 4 user interactions (mostly "Continue" prompts). The most notable issue was a `vars()` bug — Claude used `vars()` to serialize slotted dataclasses, which lacks `__dict__`. This caused 13 integration tests to fail. After I provided the test output, Claude correctly identified the root cause and replaced all `vars()` calls with `dataclasses.asdict()` across 5 files. After the fix, all 59 tests passed with **88.73% coverage**.
 
 Claude also produced a detailed `DEVELOPMENT_SESSION_LOG.md` documenting its own decisions, problems encountered, and self-assessment, which was a valuable artifact for this comparison.
 
@@ -77,7 +77,7 @@ Source: `conversations/Implementing SpaceX CLI_conversation_claude.md`
 **Prompt #3** [Test Results]
 **Student:** Shared pytest output showing 13 failed tests — `TypeError: vars() argument must have __dict__ attribute`.
 **Claude:** Identified root cause: `vars()` doesn't work with `slots=True` dataclasses. Fixed all 5 CLI command files to use `dataclasses.asdict()` instead.
-**Result:** All 63 tests passing, 90.02% coverage.
+**Result:** All 59 tests passing, 88.73% coverage.
 
 ---
 
@@ -146,7 +146,7 @@ Source: `conversations/Implementing SpaceX CLI_conversation_gemini_flash.md`
 | Creative solutions         | ★★★★☆           | ★★★★★            | Gemini              |
 | Documentation              | ★★★★★           | ★★★★☆            | Claude              |
 | Performance                | ★★★★★           | ★★★☆☆            | Claude              |
-| Test coverage              | ★★★★★           | ★★★★☆            | Claude              |
+| Test coverage              | ★★★★★           | ★★★★★            | Tie                 |
 | PEP 8 compliance           | ★★★★★           | ★★★★★            | Tie                 |
 | Overall                    | ★★★★★           | ★★★★☆            | Claude              |
 
@@ -158,7 +158,7 @@ Source: `conversations/Implementing SpaceX CLI_conversation_gemini_flash.md`
 
 **Creative solutions:** Gemini added Russian-language docstrings on error classes and used `error_console` for error output separation — creative touches. It also proactively searched the web for LL2 API structure.
 
-**Test coverage:** Claude achieved 90.02% with 63 tests (13 unit + 25 integration). Gemini has fewer tests overall (7 test files vs Claude's 13).
+**Test coverage:** Claude achieved 88.73% with 59 tests (13 unit + 25 integration). Gemini achieved 81.58% with 22 tests.
 
 ### 7. Technical Decisions Comparison
 
@@ -333,7 +333,7 @@ My **personal recommendation** for future CLI projects: use Claude for the initi
 
 Я предоставил Claude полный `implementation_plan.md` со строгими правилами: без заглушек, без остановок для вопросов, каждый файл написать полностью. Claude прочитал план и сразу начал создавать файлы фаза за фазой. Процесс был систематическим — от фазы 1 (настройка проекта) до фазы 8 (документация).
 
-Claude завершил все 8 фаз за примерно 4 взаимодействия с пользователем. Главная проблема — баг с `vars()`: Claude использовал `vars()` для сериализации слотовых датаклассов, у которых нет `__dict__`. После предоставления вывода тестов Claude верно определил причину и заменил все вызовы `vars()` на `dataclasses.asdict()` в 5 файлах. После исправления все 63 теста прошли с **покрытием 90,02%**.
+Claude завершил все 8 фаз за примерно 4 взаимодействия с пользователем. Главная проблема — баг с `vars()`: Claude использовал `vars()` для сериализации слотовых датаклассов, у которых нет `__dict__`. После предоставления вывода тестов Claude верно определил причину и заменил все вызовы `vars()` на `dataclasses.asdict()` в 5 файлах. После исправления все 59 тестов прошли с **покрытием 88,73%**.
 
 #### 3.2 Работа с Gemini 3.0 Flash
 
@@ -363,7 +363,7 @@ Gemini столкнулся с несколькими проблемами: то
 **Промпт #3** [Результаты тестов]
 **Студент:** Предоставил вывод pytest с 13 неудачными тестами — `TypeError: vars() argument must have __dict__ attribute`.
 **Claude:** Определил причину: `vars()` не работает с датаклассами `slots=True`. Исправил все 5 файлов CLI-команд на `dataclasses.asdict()`.
-**Результат:** Все 63 теста пройдены, покрытие 90,02%.
+**Результат:** Все 59 тестов пройдены, покрытие 88,73%.
 
 ---
 
@@ -427,7 +427,7 @@ Gemini столкнулся с несколькими проблемами: то
 | Креативные решения         | ★★★★☆           | ★★★★★            | Gemini              |
 | Документация               | ★★★★★           | ★★★★☆            | Claude              |
 | Производительность         | ★★★★★           | ★★★☆☆            | Claude              |
-| Покрытие тестами           | ★★★★★           | ★★★★☆            | Claude              |
+| Покрытие тестами           | ★★★★★           | ★★★★★            | Ничья               |
 | Соответствие PEP 8         | ★★★★★           | ★★★★★            | Ничья               |
 | Общая оценка               | ★★★★★           | ★★★★☆            | Claude              |
 
@@ -439,7 +439,7 @@ Gemini столкнулся с несколькими проблемами: то
 
 **Креативные решения:** Gemini добавил русскоязычные docstring-и и отдельный `error_console` — продуманные решения. Также провёл веб-поиск документации LL2 API.
 
-**Покрытие тестами:** Claude — 90,02% с 63 тестами. У Gemini меньше тестов (7 файлов против 13 у Claude).
+**Покрытие тестами:** Claude — 88,73% с 59 тестами. У Gemini — 81,58% с 22 тестами.
 
 ### 7. Сравнение технических решений
 
@@ -525,12 +525,13 @@ Gemini столкнулся с несколькими проблемами: то
 
 #### С чем оба столкнулись:
 1. **`vars()` на слотовых датаклассах** — оба использовали `vars()` вместо `dataclasses.asdict()`, получив идентичные `TypeError`.
-2. **Пагинация LL2** — ни одна версия не реализовала полную курсорную пагинацию (ссылки next/previous). Обе используют запросы с limit.
-3. **Ограничение скорости** — анонимный лимит 15 запросов/час не обрабатывается корректно ни одной версией.
+1.  **`vars()` на слотовых датаклассах** — оба использовали `vars()` вместо `dataclasses.asdict()`, получив идентичные `TypeError`.
+2.  **Пагинация LL2** — ни одна версия не реализовала полную курсорную пагинацию (ссылки next/previous). Обе используют запросы с limit.
+3.  **Ограничение скорости** — анонимный лимит 15 запросов/час не обрабатывается корректно ни одной версией.
 
 ### 10. Выводы и рекомендации
 
-В целом **Claude Opus 4.6 Thinking** показал лучшие результаты в этом сравнении. Claude доставил код более высокого качества с первой попытки, потребовал меньше итераций для достижения полностью рабочего состояния и создал более полные тесты (90% покрытия). Модели данных Claude были лучше адаптированы к структуре Launch Library 2 API.
+В целом **Claude Opus 4.6 Thinking** показал лучшие результаты в этом сравнении. Claude доставил код более высокого качества с первой попытки, потребовал меньше итераций для достижения полностью рабочего состояния и создал более полные тесты (88.73% покрытия). Модели данных Claude были лучше адаптированы к структуре Launch Library 2 API.
 
 Однако **Gemini 3.0 Flash** продемонстрировал сильные стороны в итеративной разработке и творческом решении проблем. Веб-исследование Gemini, русские docstring-и и отдельная error_console были продуманными дополнениями.
 

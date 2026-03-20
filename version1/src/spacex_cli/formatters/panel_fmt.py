@@ -88,7 +88,7 @@ def format_company_panel(c: CompanyInfo) -> Panel:
 
 **Launch Statistics:**
 - Total: {c.total_launch_count}
-- Success: {c.successful_launches} ({(c.successful_launches/c.total_launch_count*100):.1f}% if c.total_launch_count else 0)
+- Success: {c.successful_launches} ({ (c.successful_launches / c.total_launch_count * 100) if c.total_launch_count else 0 :.1f}%)
 - Failed: {c.failed_launches}
 - Pending: {c.pending_launches}
 - Streak: {c.consecutive_successful_launches}
@@ -104,7 +104,7 @@ def format_company_panel(c: CompanyInfo) -> Panel:
 - [Wiki]({c.wiki_url or "N/A"}) | [Info]({c.info_url or "N/A"})
 """
     # Fix the percentage calculation logic in string
-    success_rate = f"{(c.successful_launches/c.total_launch_count*100):.1f}%" if c.total_launch_count else "0%"
-    content = content.replace("({(c.successful_launches/c.total_launch_count*100):.1f}% if c.total_launch_count else 0)", f"({success_rate})")
+    success_rate = f"{(c.successful_launches / c.total_launch_count * 100):.1f}%" if c.total_launch_count else "0.0%"
+    content = content.replace("({ (c.successful_launches / c.total_launch_count * 100) if c.total_launch_count else 0 :.1f}%)", f"({success_rate})")
 
     return Panel(Markdown(content), title="🏢 Agency Info", border_style="green")

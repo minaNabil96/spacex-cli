@@ -17,7 +17,7 @@ Results are compared analytically in [comparison.md](comparison.md).
 | Directory        | `version1/`            | `version2/`             |
 | Entry Point      | `spacex`                     | `spacex2`                     |
 | Commands         | 10                            | 10                             |
-| Test Coverage    | 90% (63 tests)               | >60%                          |
+| Test Coverage    | 88.73% (59 tests)           | 81.58% (22 tests)            |
 | REST API         | Launch Library 2 API         | Launch Library 2 API          |
 
 ## Quick Start
@@ -70,7 +70,7 @@ spacex-cli/
 - **3 export formats**: JSON, CSV, Markdown
 - **Launch Library 2 API** integration with SpaceX filtering
 - **Comprehensive error handling** with custom exception hierarchy
-- **60%+ test coverage** in both versions
+- **80%+ test coverage** in both versions
 
 ## Documentation
 
@@ -107,7 +107,7 @@ MIT
 | Директория       | `version1/`            | `version2/`             |
 | Точка входа      | `spacex`                     | `spacex2`                     |
 | Команды          | 10                            | 10                             |
-| Покрытие тестов  | 90% (63 теста)               | >60%                          |
+| Покрытие тестов  | 88,73% (59 тестов)           | 81,58% (22 теста)             |
 | REST API         | Launch Library 2 API         | Launch Library 2 API          |
 
 ## Быстрый старт
@@ -159,7 +159,7 @@ spacex-cli/
 - **3 формата экспорта**: JSON, CSV, Markdown
 - **Интеграция с Launch Library 2 API** с фильтрацией SpaceX
 - **Комплексная обработка ошибок** с иерархией исключений
-- **60%+ покрытие тестами** в обеих версиях
+- **80%+ покрытие тестами** в обеих версиях
 
 ## Документация
 

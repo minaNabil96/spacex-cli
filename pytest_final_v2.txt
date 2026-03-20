@@ -1,0 +1,86 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.7, pytest-7.4.4, pluggy-1.6.0 -- C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Python\CLI_Projects\Claude+Gemini_Flash\version2
+configfile: pyproject.toml
+testpaths: ../tests/version2
+plugins: anyio-4.11.0, langsmith-0.4.34, cov-4.1.0, mock-3.15.1
+collecting ... collected 22 items
+
+integration/test_capsules_cmd.py::test_list_capsules_table PASSED        [  4%]
+integration/test_capsules_cmd.py::test_capsule_info PASSED               [  9%]
+integration/test_company_cmd.py::test_company_info_table PASSED          [ 13%]
+integration/test_company_cmd.py::test_company_info_json PASSED           [ 18%]
+integration/test_export_cmd.py::test_export_launches_json PASSED         [ 22%]
+integration/test_export_cmd.py::test_export_launches_csv PASSED          [ 27%]
+integration/test_launches_cmd.py::test_list_launches_json PASSED         [ 31%]
+integration/test_launches_cmd.py::test_launch_info_not_found PASSED      [ 36%]
+integration/test_rockets_cmd.py::test_list_rockets_table PASSED          [ 40%]
+integration/test_rockets_cmd.py::test_list_rockets_json PASSED           [ 45%]
+integration/test_rockets_cmd.py::test_rocket_info PASSED                 [ 50%]
+integration/test_rockets_cmd.py::test_rocket_info_not_found PASSED       [ 54%]
+unit/test_cli_commands.py::test_launches_list_command PASSED             [ 59%]
+unit/test_cli_commands.py::test_company_info_command PASSED              [ 63%]
+unit/test_formatters.py::test_format_json PASSED                         [ 68%]
+unit/test_formatters.py::test_format_launches_table PASSED               [ 72%]
+unit/test_launch_service.py::test_get_launches PASSED                    [ 77%]
+unit/test_launch_service.py::test_get_launch_by_id PASSED                [ 81%]
+unit/test_models.py::test_launch_creation PASSED                         [ 86%]
+unit/test_models.py::test_launch_details_creation PASSED                 [ 90%]
+unit/test_models.py::test_frozen_behaviour PASSED                        [ 95%]
+unit/test_pagination.py::test_paginate PASSED                            [100%]C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\coverage\inorout.py:577: CoverageWarning: Module spacex_cli was previously imported, but not measured (module-not-measured); see https://coverage.readthedocs.io/en/7.13.4/messages.html#warning-module-not-measured
+  self.warn(msg, slug="module-not-measured")
+
+
+============================== warnings summary ===============================
+integration/test_launches_cmd.py::test_list_launches_json
+unit/test_cli_commands.py::test_launches_list_command
+unit/test_launch_service.py::test_get_launches
+  C:\Users\Mina Hanna\AppData\Local\Programs\Python\Python313\Lib\site-packages\responses\__init__.py:436: DeprecationWarning: Argument 'match_querystring' is deprecated. Use 'responses.matchers.query_param_matcher' or 'responses.matchers.query_string_matcher'
+    warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform win32, python 3.13.7-final-0 -----------
+Name                                         Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------
+src\spacex_cli\__init__.py                       1      0   100%
+src\spacex_cli\__main__.py                       3      3     0%   1-4
+src\spacex_cli\api\__init__.py                   2      0   100%
+src\spacex_cli\api\client.py                    47     12    74%   23-24, 33, 41-43, 52-57
+src\spacex_cli\api\endpoints.py                  7      0   100%
+src\spacex_cli\api\pagination.py                 6      0   100%
+src\spacex_cli\cli\__init__.py                  28      2    93%   56-57
+src\spacex_cli\cli\capsules.py                  36     11    69%   24-26, 31-33, 44-46, 51-52
+src\spacex_cli\cli\company.py                   22      3    86%   21-23
+src\spacex_cli\cli\export.py                    28      8    71%   25-27, 34-38
+src\spacex_cli\cli\launches.py                  46     14    70%   30-32, 53-56, 62-70
+src\spacex_cli\cli\rockets.py                   36      5    86%   24-26, 51-52
+src\spacex_cli\config\__init__.py                0      0   100%
+src\spacex_cli\config\settings.py                7      0   100%
+src\spacex_cli\formatters\__init__.py            0      0   100%
+src\spacex_cli\formatters\csv_fmt.py            10     10     0%   1-13
+src\spacex_cli\formatters\json_fmt.py            6      0   100%
+src\spacex_cli\formatters\panel_fmt.py          19      3    84%   11-29
+src\spacex_cli\formatters\table_fmt.py          34      0   100%
+src\spacex_cli\models\__init__.py                0      0   100%
+src\spacex_cli\models\capsule.py                13      0   100%
+src\spacex_cli\models\company.py                17      0   100%
+src\spacex_cli\models\launch.py                 22      0   100%
+src\spacex_cli\models\rocket.py                 19      0   100%
+src\spacex_cli\services\__init__.py              0      0   100%
+src\spacex_cli\services\capsule_service.py      10      0   100%
+src\spacex_cli\services\company_service.py       6      0   100%
+src\spacex_cli\services\export_service.py       22      5    77%   16, 25-28
+src\spacex_cli\services\launch_service.py       49     11    78%   17, 19, 34-37, 46-47, 55-56, 101
+src\spacex_cli\services\rocket_service.py       10      0   100%
+src\spacex_cli\utils\__init__.py                 0      0   100%
+src\spacex_cli\utils\console.py                  4      0   100%
+src\spacex_cli\utils\countdown.py               17     11    35%   10-22
+src\spacex_cli\utils\errors.py                  12      2    83%   22-23
+src\spacex_cli\utils\logging.py                  4      0   100%
+--------------------------------------------------------------------------
+TOTAL                                          543    100    82%
+
+Required test coverage of 60% reached. Total coverage: 81.58%
+======================= 22 passed, 3 warnings in 0.39s ========================
